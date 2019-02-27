@@ -1,19 +1,22 @@
 import React from 'react';
 import PokeCard from './PokeCard';
-import './../styles/PokeList.css';
+import './../styles/components/PokeList.css';
 class PokeList extends React.Component { 
   constructor() {
     super();
-
     this.state = {
       selectedPokemon : false
     };
   }
 
   renderPokemon = () => {
+    const filteredPokemon = this.props.pokemon.filter(pokemon => {
+      return pokemon.name.includes(this.props.textFilter.toLowerCase());
+    })
+
     return (
-      this.props.pokemon.map(pokemon => (
-        <PokeCard key={pokemon.id} pokemon={pokemon} handleClick={this.handleClick} />
+      filteredPokemon.map(pokemon => (
+        <PokeCard key={pokemon.name} pokemon={pokemon} handleClick={this.handleClick} />
       ))    
     ) 
   }
@@ -24,7 +27,6 @@ class PokeList extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="poke-list">
         <ul className="poke-list__grid">
