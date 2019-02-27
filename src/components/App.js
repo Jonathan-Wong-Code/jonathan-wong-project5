@@ -1,33 +1,29 @@
 import React from 'react';
-import axios from 'axios';
-
+import pokeapi from './../apis/pokeapi';
+import Header from './Header.js';
+import PokeList from './PokeList';
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       filters : {},
-      searchedPokemon : [],
+      Pokemon : [],
       selectedPokemon : {}
     };
   }
 
   async componentDidMount() {
-    await this.getPokemon('fire');
-  }
-
-  getPokemon = async (type) => {
-    const searchType = type === 'all' ? 'pokemon' : `type/${type}`;
-    const response = await axios(`https://pokeapi.co/api/v2/${searchType}`, {
-      params : {
-        limit : 151
-      }
-    });
-    console.log(response.data);
+    const response = await pokeapi.get('/pokemon');
+    this.setState({ Pokemon : response.data.results });
   }
 
   render() {
     return (
-      <h1>This is my app</h1>
+      <React.Fragment>
+        <Header />
+        {/* // filterbar and search bar....send a setstate for filtering */}
+        <PokeList pokemon ={this.state.Pokemon}/>
+      </React.Fragment>
     );
   }
 }

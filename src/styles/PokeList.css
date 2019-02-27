@@ -1,0 +1,19 @@
+.poke-list__grid {
+  display : grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  grid-gap: 2rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.poke-card__img-box {
+  transform: scale(1.2);
+}
+
+.poke-card__item {
+  padding:1rem;
+  border:1px solid black;
+  border-radius:10px;
+  width:100%;
+  
+}
