@@ -23,10 +23,7 @@ const PokeTeamList = ({ pokeTeam, handleRemovePokemon }) => {
         return <EmptyTeamListItem key={item} index={item} />;
       })
     );
-  }
-
-  
-  //End function
+  };
 
   // return teamArray.map(pokemon => {
   //   return (
@@ -40,7 +37,7 @@ const PokeTeamList = ({ pokeTeam, handleRemovePokemon }) => {
   
   return (
     <section className='poke-team'>
-      <ul className="poke-team__list">
+      <ul className='poke-team__list'>
         {renderPokeTeam()}
       </ul>
     </section>

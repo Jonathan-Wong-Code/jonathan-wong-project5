@@ -1,7 +1,6 @@
 import React from 'react';
 
 const PokeTeamListItem = ({ pokemon, handleRemovePokemon }) => {
-
   const onButtonClick = () => {
     handleRemovePokemon(pokemon.uniqueId);
   };

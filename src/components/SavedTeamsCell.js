@@ -1,7 +1,9 @@
 import React from 'react';
 
-const SavedTeamsCell = ({ pokeTeam }) => {
+const SavedTeamsCell = ({ team }) => {
   return (
-    <h2>{pokeTeam.id}</h2>
-  )
+    <h2>{team.id}</h2>
+  );
 };  
+
+export default SavedTeamsCell;

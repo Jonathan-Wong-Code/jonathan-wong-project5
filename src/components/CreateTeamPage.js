@@ -1,6 +1,7 @@
 import React from 'react';
 import database from './../firebase/firebase';
 import uuid from 'uuid';
+import moment from 'moment';
 import pokeapi from './../apis/pokeapi';
 import PokeList from './PokeList';
 import SearchBar from './SearchBar';
@@ -37,14 +38,15 @@ class CreateTeamPage extends React.Component {
       const newTeamObj = {
         pokemon : prevState.currentPokemonTeam,
         name,
-        description
+        description,
+        createdAt : moment().valueOf()
       }
       
       return {
         pokemonTeamToSave : newTeamObj
       }
     });
-    database.ref('pokemon').push(this.state.pokemonTeamToSave);
+    await database.ref('pokemon').push(this.state.pokemonTeamToSave);
   }
 
   handleAddPokemon = (pokemon) => {
