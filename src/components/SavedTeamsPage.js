@@ -23,6 +23,7 @@ class SavedTeamsPage extends React.Component {
       });
       this.setState({ savedTeams : teamList });
     });
+    console.log(this.state.savedTeams)
   }
   
   componentDidUpdate = (prevProps, prevState) => {

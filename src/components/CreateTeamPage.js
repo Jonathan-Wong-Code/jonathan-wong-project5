@@ -33,20 +33,27 @@ class CreateTeamPage extends React.Component {
     }));
   }
 
-  handleSaveTeam = async (name, description) => {
-    await this.setState((prevState) => {
-      const newTeamObj = {
-        pokemon : prevState.currentPokemonTeam,
-        name,
-        description,
-        createdAt : moment().valueOf()
-      }
+  handleSaveTeam = (name, description) => {
+    // await this.setState((prevState) => {
+    //   const newTeamObj = {
+    //     pokemon : prevState.currentPokemonTeam,
+    //     name,
+    //     description,
+    //     createdAt : moment().valueOf()
+    //   }
       
-      return {
-        pokemonTeamToSave : newTeamObj
-      }
-    });
-    await database.ref('pokemon').push(this.state.pokemonTeamToSave);
+    //   return {
+    //     pokemonTeamToSave : newTeamObj
+    //   }
+    // });
+
+    const newTeamObj = {
+      pokemon : this.state.currentPokemonTeam,
+      name,
+      description,
+      createdAt : moment().valueOf()
+    }
+    database.ref('pokemon').push(newTeamObj);
   }
 
   handleAddPokemon = (pokemon) => {

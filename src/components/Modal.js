@@ -3,6 +3,7 @@ import './../styles/components/Modal.css';
 
 const Modal = ({ pokemon, handleModalCancel, renderButtons, error }) => {
   const renderTypes = () => pokemon.types.map(type => {
+    
     return (
       <span className='modal__type' key={type.type.name}> {type.type.name}</span>
     );

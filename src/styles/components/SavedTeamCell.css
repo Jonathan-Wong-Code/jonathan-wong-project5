@@ -1,0 +1,27 @@
+.team-cell {
+  border:2px solid red;
+  padding:2rem;
+  display:grid;
+  justify-items: center;
+}
+
+.team-cell p {
+  margin: .5rem 0;
+}
+
+.team-cell__heading {
+  margin-bottom:.5rem;
+}
+
+.team-cell__img-list {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border:1px solid black;
+  grid-row-gap:1rem;
+  grid-column-gap: 1.5rem;
+  width:60%;
+}
+
+.team-cell__img-item {
+  border:1px dashed grey;
+}

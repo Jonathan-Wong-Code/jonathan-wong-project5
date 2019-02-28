@@ -1,11 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 import CreateTeamPage from './CreateTeamPage';
 import SavedTeamsPage from './SavedTeamsPage';
 import Header from './Header';
+import createHistory from 'history/createBrowserHistory';
+
+const history = createHistory();
+
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <React.Fragment>
         <Header />
         <Switch>
@@ -13,8 +17,7 @@ const App = () => {
           <Route path='/SavedTeams' component={SavedTeamsPage} />
         </Switch>
       </React.Fragment>
-    
-    </BrowserRouter>
+    </Router>
   );
 };
 

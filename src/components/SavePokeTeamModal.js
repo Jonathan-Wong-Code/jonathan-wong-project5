@@ -26,9 +26,11 @@ class SavePokeTeamModal extends React.Component {
     e.preventDefault();
     console.log(this.state.name, this.state.description);
     this.props.handleSaveTeam(this.state.name, this.state.description);
+    this.props.history.push('/SavedTeams')
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="modal__background">
         <div className='save-form modal__body'>
