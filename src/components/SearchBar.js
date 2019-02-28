@@ -7,7 +7,6 @@ class SearchBar extends React.Component {
     this.state = {
       type : '',
       textFilter : '',
-    
     }
   }
 
@@ -17,7 +16,7 @@ class SearchBar extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    await this.props.handlePokeNameSearch(this.state.textFilter, this.state.type);
+    await this.props.handlePokeSearch(this.state.textFilter, this.state.type);
   }
 
   handleTypeChange = async (e) => {
@@ -28,8 +27,8 @@ class SearchBar extends React.Component {
   render() {
     return (
     <div>
-      <span className='visuallyhidden' htmlFor='search-name'>Search by name</span>
       <form action="" onSubmit={this.handleSubmit}>
+      <span className='visuallyhidden' htmlFor='search-name'>Search by name</span>
       <input 
         type='text' 
         placeholder='Search Pokemon' 
@@ -61,8 +60,7 @@ class SearchBar extends React.Component {
       </select> 
       <button type='Submit'>Search!</button>
       </form>
-      
-      
+    
     </div>
     );
   }
