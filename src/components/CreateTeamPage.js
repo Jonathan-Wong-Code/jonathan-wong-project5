@@ -1,10 +1,12 @@
 import React from 'react';
+import database from './../firebase/firebase';
 import uuid from 'uuid';
 import pokeapi from './../apis/pokeapi';
 import PokeList from './PokeList';
 import SearchBar from './SearchBar';
 import PokeTeamList from './PokeTeamList';
 import SaveTeamListBtn from './SavePokeTeamBtn'
+import SavePokeTeamModal from './SavePokeTeamModal';
 
 class CreateTeamPage extends React.Component {
   constructor() {
@@ -13,7 +15,9 @@ class CreateTeamPage extends React.Component {
       textFilter : '',
       typeFilter : '',
       pokemon : [],
-      currentPokemonTeam : {}
+      currentPokemonTeam : [],
+      pokemonTeamToSave : {},
+      showSaveModal : false
     };
   }
 
@@ -22,25 +26,61 @@ class CreateTeamPage extends React.Component {
     this.setState({ pokemon : response.data.results });
   }
 
-  handleAddPokemon = (pokemon) => {
-    const uniqueId = uuid();
-    this.setState((prevState) => ({
-      currentPokemonTeam : {...prevState.currentPokemonTeam,  
-        [uniqueId] : {
-          ...pokemon,
-          uniqueId
-        }
-      }
+  toggleModal = () => {
+    this.setState((prevState)=> ({
+      showSaveModal : !prevState.showSaveModal
     }));
   }
 
-  handleRemovePokemon = (id) => {
-    this.setState((prevState) => {
-        delete prevState.currentPokemonTeam[id]
-        return {
-          currentPokemonTeam : prevState.currentPokemonTeam
-        }
+  handleSaveTeam = async (name, description) => {
+    await this.setState((prevState) => {
+      const newTeamObj = {
+        pokemon : prevState.currentPokemonTeam,
+        name,
+        description
+      }
+      
+      return {
+        pokemonTeamToSave : newTeamObj
+      }
     });
+    database.ref('pokemon').push(this.state.pokemonTeamToSave);
+  }
+
+  handleAddPokemon = (pokemon) => {
+    const uniqueId = uuid();
+    // this.setState((prevState) => ({
+    //   currentPokemonTeam : {...prevState.currentPokemonTeam,  
+    //     [uniqueId] : {
+    //       ...pokemon,
+    //       uniqueId
+    //     }
+    //   }
+    // }));
+
+    this.setState((prevState) => ({
+      currentPokemonTeam : [...prevState.currentPokemonTeam, {
+        uniqueId,
+        ...pokemon
+      }]
+    }));
+    console.log(this.state.currentPokemonTeam);
+  }
+
+  handleRemovePokemon = (id) => {
+    // this.setState((prevState) => {
+    //     delete prevState.currentPokemonTeam[id]
+    //     return {
+    //       currentPokemonTeam : prevState.currentPokemonTeam
+    //     }
+    // });
+    this.setState((prevState) => {
+      const newState = prevState.currentPokemonTeam
+        .filter(pokemon => pokemon.uniqueId !== id)
+      return {
+        currentPokemonTeam : newState
+      }
+    })
   }
  
   handlePokeSearch = async (textFilter, type) => {
@@ -65,18 +105,30 @@ class CreateTeamPage extends React.Component {
           pokeTeam ={this.state.currentPokemonTeam}
           handleRemovePokemon = {this.handleRemovePokemon}
         />
-        <SaveTeamListBtn currentPokemonTeam ={this.state.currentPokemonTeam}/>  
+
+
+        <SaveTeamListBtn 
+          currentPokemonTeam ={this.state.currentPokemonTeam}
+          toggleModal={this.toggleModal}
+        />  
+        {
+          this.state.showSaveModal && 
+          <SavePokeTeamModal 
+            toggleModal={this.toggleModal}
+            handleSaveTeam={this.handleSaveTeam}
+          />
+        }
         <SearchBar 
           handlePokeSearch = {this.handlePokeSearch}
         />
         
-      <PokeList 
-        pokemon ={this.state.pokemon} 
-        textFilter ={this.state.textFilter}
-        type = 'create'
-        handleAddPokemon = {this.handleAddPokemon}
-        currentPokemonTeam = {this.state.currentPokemonTeam}
-      />
+        <PokeList 
+          pokemon ={this.state.pokemon} 
+          textFilter ={this.state.textFilter}
+          type = 'create'
+          handleAddPokemon = {this.handleAddPokemon}
+          currentPokemonTeam = {this.state.currentPokemonTeam}
+        />
 
       </React.Fragment>
     );

@@ -7,9 +7,9 @@ import './../styles/components/PokeTeamList.css';
 const PokeTeamList = ({ pokeTeam, handleRemovePokemon }) => {
   const renderPokeTeam = () => {
     const emptySlots = [1, 2, 3, 4, 5, 6];
-    const teamArray = Object.values(pokeTeam);
-    return teamArray.length > 0 ? (
-      teamArray.map(pokemon => {
+   
+    return pokeTeam.length > 0 ? (
+      pokeTeam.map(pokemon => {
         return (
           <PokeTeamListItem 
             key={pokemon.uniqueId} 

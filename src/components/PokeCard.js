@@ -20,7 +20,6 @@ class PokeCard extends React.Component {
   }
 
   onPokeCardClick = () => {
-    console.log('click');
     this.props.handlePokeCardClick(this.state.currentPokemon);
   }
   
