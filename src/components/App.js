@@ -1,9 +1,9 @@
 import React from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import CreateTeamPage from './CreateTeamPage';
 import SavedTeamsPage from './SavedTeamsPage';
 import Header from './Header';
-import createHistory from 'history/createBrowserHistory';
 
 const history = createHistory();
 

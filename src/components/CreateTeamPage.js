@@ -125,6 +125,7 @@ class CreateTeamPage extends React.Component {
           <SavePokeTeamModal 
             toggleModal={this.toggleModal}
             handleSaveTeam={this.handleSaveTeam}
+            history={this.props.history}
           />
         }
         <SearchBar 
