@@ -18,13 +18,18 @@ class PokeCard extends React.Component {
     const response = await axios.get(`${this.props.pokemon.url}`);
     await this.setState({currentPokemon : response.data});
   }
+
+  onPokeCardClick = () => {
+    console.log('click');
+    this.props.handlePokeCardClick(this.state.currentPokemon);
+  }
   
   render() {
     if (!this.state.currentPokemon) return <div />
     
     if (this.state.currentPokemon.sprites.front_default){
       return (
-        <li onClick={this.props.handleClick} tabIndex='0' className="poke-card__item">
+        <li onClick={this.onPokeCardClick} tabIndex='0' className="poke-card__item">
           <div className="poke-card__img-box">
             <img src={this.state.currentPokemon.sprites.front_default} alt="" />
           </div>
