@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
 
     this.state = {
       type : '',
-      textFilter : ''
+      textFilter : '',
     
     }
   }
@@ -58,8 +58,7 @@ class SearchBar extends React.Component {
         <option value="steel">steel</option>
         <option value="fairy">fairy</option>
         <option value="fire">fire</option>
-      </select>
-      
+      </select> 
       <button type='Submit'>Search!</button>
       </form>
       

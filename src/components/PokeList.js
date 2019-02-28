@@ -8,7 +8,8 @@ class PokeList extends React.Component {
     super();
     this.state = {
       showModal : false,
-      currentPokemon : null
+      currentPokemon : null,
+      error : ''
     };
   } 
 
@@ -46,7 +47,7 @@ class PokeList extends React.Component {
         this.props.handleAddPokemon(this.state.currentPokemon);
         this.setState({ currentPokemon : null});
       } else {
-        alert('Your team is full!');
+        this.setState({ error : 'Your team is full. Remove a team member' });
       }    
   }
 
@@ -71,6 +72,7 @@ class PokeList extends React.Component {
           pokemon = {this.state.currentPokemon}
           handleModalCancel = {this.handleModalCancel}
           renderButtons = {this.renderButtons}
+          error = {this.state.error}
         /> 
       }
       </React.Fragment>

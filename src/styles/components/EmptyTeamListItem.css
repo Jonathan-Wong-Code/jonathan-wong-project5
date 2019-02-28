@@ -1,0 +1,10 @@
+.empty-item {
+  border:1px solid black;
+  border-radius:10px;
+  display:flex;
+  height:22vw;
+}
+
+.empty-item__text {
+  margin: auto;
+}

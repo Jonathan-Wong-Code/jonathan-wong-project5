@@ -1,22 +1,42 @@
 import React from 'react';
 import PokeTeamListItem from './PokeTeamListItem';
+import EmptyTeamListItem from './EmptyTeamListItem';
 import './../styles/components/PokeTeamList.css';
 
 
-const PokeTeamList = ({pokeTeam, handleRemovePokemon}) => {
-
+const PokeTeamList = ({ pokeTeam, handleRemovePokemon }) => {
   const renderPokeTeam = () => {
+    const emptySlots = [1, 2, 3, 4, 5, 6];
     const teamArray = Object.values(pokeTeam);
-    return teamArray.map(pokemon => {
-      return (
-        <PokeTeamListItem 
-          key={pokemon.uniqueId} 
-          pokemon={pokemon} 
-          handleRemovePokemon={handleRemovePokemon}
-        />
-      );
-    });
-  };
+    return teamArray.length > 0 ? (
+      teamArray.map(pokemon => {
+        return (
+          <PokeTeamListItem 
+            key={pokemon.uniqueId} 
+            pokemon={pokemon} 
+            handleRemovePokemon={handleRemovePokemon}
+          />
+        );
+      })
+    ) : (
+      emptySlots.map(item => {
+        return <EmptyTeamListItem key={item} index={item} />;
+      })
+    );
+  }
+
+  
+  //End function
+
+  // return teamArray.map(pokemon => {
+  //   return (
+  //     <PokeTeamListItem 
+  //       key={pokemon.uniqueId} 
+  //       pokemon={pokemon} 
+  //       handleRemovePokemon={handleRemovePokemon}
+  //     />
+  //   );
+  // });
   
   return (
     <section className='poke-team'>
