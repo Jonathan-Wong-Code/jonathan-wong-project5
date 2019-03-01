@@ -1,5 +1,4 @@
 import React from 'react';
-import database from '../firebase/firebase';
 import uuid from 'uuid';
 import moment from 'moment';
 import pokeapi from '../apis/pokeapi';
@@ -27,7 +26,6 @@ class BuildPokeTeamPage extends React.Component {
     console.log(this.props);
     const response = await pokeapi.get('/pokemon');
     this.setState({ pokemon : response.data.results });
-    // this.setState({ pageType : this.props.location.state.type })
   }
 
   toggleModal = () => {
@@ -43,7 +41,7 @@ class BuildPokeTeamPage extends React.Component {
       description,
       createdAt : this.props.pokeTeam? this.props.pokeTeam.createdAt : moment().valueOf()
     }
-    //This would save or edit my function in parent component.
+
     if(this.props.type ==='create') {
       this.props.handleAddTeam(newTeamObj);
     } else {
@@ -53,7 +51,6 @@ class BuildPokeTeamPage extends React.Component {
 
   handleAddPokemon = (pokemon) => {
     const uniqueId = uuid();
-  
     this.setState((prevState) => ({
       currentPokemonTeam : [...prevState.currentPokemonTeam, {
         uniqueId,
@@ -100,10 +97,10 @@ class BuildPokeTeamPage extends React.Component {
           handleRemovePokemon = {this.handleRemovePokemon}
         />
 
-
         <SaveTeamListBtn 
           currentPokemonTeam ={this.state.currentPokemonTeam}
           toggleModal={this.toggleModal}
+          type={this.props.type}
         />  
         {
           this.state.showSaveModal && 
@@ -112,8 +109,10 @@ class BuildPokeTeamPage extends React.Component {
             handleSaveTeam={this.handleSaveTeam}
             history={this.props.history}
             pokeTeam = {this.props.pokeTeam ? this.props.pokeTeam : null}
+            type={this.props.type}
           />
         }
+
         <SearchBar 
           handlePokeSearch = {this.handlePokeSearch}
         />

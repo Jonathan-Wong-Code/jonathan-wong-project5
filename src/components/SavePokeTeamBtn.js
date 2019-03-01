@@ -1,13 +1,13 @@
 import React from 'react';
 
-const SavePokeTeamBtn = ({ toggleModal }) => {
+const SavePokeTeamBtn = ({ toggleModal, type }) => {
   const onButtonClick = () => {
     toggleModal();
   };
 
   return (
     <button onClick={onButtonClick} className='save-team__btn'>
-      Save Team
+      {type === 'create' ? 'Save Team' : 'Edit Team'}
     </button>
   );
 };

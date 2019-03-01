@@ -30,8 +30,8 @@ class SavePokeTeamModal extends React.Component {
 
   render() {
     return (
-      <div className="modal__background">
-        <div className='save-form modal__body'>
+      <div className="modal__background" onClick={() => this.props.toggleModal()}>
+        <div className='save-form modal__body' onClick={(e) => e.stopPropagation()}>
           <form action='' className="save-form__form" onSubmit={this.handleSubmit}>
             <input 
               type='text' 
@@ -50,7 +50,9 @@ class SavePokeTeamModal extends React.Component {
               onChange={this.handleTextAreaChange}
               className='save-form__description'
             />
-            <button className='save-form__save' type='submit'>Save Team </button>
+            <button className='save-form__save' type='submit'>
+            {this.props.type ==='create' ? 'Save Team' : 'Edit Team'}
+            </button>
             <button 
               className='save-form__back' 
               onClick={this.onBackClick}
