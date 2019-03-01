@@ -19,6 +19,7 @@ const SavedTeamsCell = ({ team, handleRemoveTeam }) => {
     handleRemoveTeam(team.id);
   };
 
+  if (!team.pokemon) return <div />;
   return (
     <li className='team-cell'>
       <ul className='team-cell__img-list'>
@@ -31,9 +32,8 @@ const SavedTeamsCell = ({ team, handleRemoveTeam }) => {
       </p>
       <p className='team-cell__description'>{team.description}</p>
       <div className='team-cell__buttons'>
-        <Link to={`/edit/${team.id}`}
-        >   
-        Edit
+        <Link to={`/edit/${team.id}`}>  
+          Edit
         </Link>
         <button onClick={onDeleteClick}>Delete</button>
       </div>

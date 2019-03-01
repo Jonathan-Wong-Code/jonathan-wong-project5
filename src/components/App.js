@@ -30,7 +30,6 @@ class App extends React.Component {
           history.push('/create');
         }
       } else {
-       
         this.setState({ auth : null});
         console.log(this.state.auth);
         console.log('logout');
@@ -45,12 +44,14 @@ class App extends React.Component {
 
   handleLoginGuest = () => {
     this.setState({ auth : 'guest' });
+    history.push('/create');
   }
 
   handleLogout = () => {
     firebase.auth().signOut();
-    
+    history.push('/');
   }
+  
   // https://tylermcginnis.com/react-router-pass-props-to-components/
   // For prop rendering
   render() {
@@ -69,9 +70,30 @@ class App extends React.Component {
               }
               exact 
             />
-            <Route path='/create' component={CreateTeamPage} />
-            <Route path='/SavedTeams' component={SavedTeamsPage} />
-            <Route path='/edit/:id' component={EditTeamPage} />
+            <Route path='/create' 
+              render = {
+                (props) =>
+                  <CreateTeamPage {...props}
+                    authId ={this.state.auth}
+                  />
+              }
+            />
+
+            <Route path='/SavedTeams' render = {
+                (props) =>
+                  <SavedTeamsPage {...props}
+                    authId ={this.state.auth}
+                />
+              } 
+            />
+
+            <Route path='/edit/:id' render = {
+                (props) =>
+                  <EditTeamPage {...props}
+                    authId ={this.state.auth}
+                />
+              } 
+            />
           </Switch>
         </React.Fragment>
       </Router>

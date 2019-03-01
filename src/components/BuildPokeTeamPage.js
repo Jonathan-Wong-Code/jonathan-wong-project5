@@ -23,7 +23,6 @@ class BuildPokeTeamPage extends React.Component {
 
   // https://tylermcginnis.com/react-router-pass-props-to-link/ Passing state through link
   async componentDidMount() {
-    console.log(this.props);
     const response = await pokeapi.get('/pokemon');
     this.setState({ pokemon : response.data.results });
   }

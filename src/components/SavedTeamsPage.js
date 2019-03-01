@@ -3,6 +3,7 @@ import database from './../firebase/firebase';
 import SavedTeamsList from './SavedTeamsList';
 
 class SavedTeamsPage extends React.Component {
+  _isMounted = false;
   constructor() {
     super();
 
@@ -12,7 +13,8 @@ class SavedTeamsPage extends React.Component {
   }
 
   async componentDidMount() {
-    database.ref('pokemon').on('value', (response) => {
+    this._isMounted = true;
+    database.ref(`users/${this.props.authId}/pokemon`).on('value', (response) => {
       const teamList = {};
       response.forEach(team => {
         teamList[team.key] = ({
@@ -20,23 +22,27 @@ class SavedTeamsPage extends React.Component {
           id : team.key
         });
       });
-      this.setState({ savedTeams : teamList });
+      if(this._isMounted){
+        this.setState({ savedTeams : teamList });
+      }
     });
   }
-  
-  componentDidUpdate = (prevProps, prevState) => {
-    console.log(this.state.savedTeams)
 
+
+  componentWillUnmount() {
+    this._isMounted = false;
+    database.ref().off();
   }
-  
+
   handleRemoveTeam = (id) => {
     // this.setState((prevState) => {
-    //   delete prevState[id]
+    //   const newObj = Object.assign({}, prevState.savedTeams);
+    //   delete newObj[id]
     //   return {
-    //     savedTeams : prevState
+    //     savedTeams : newObj
     //   }
     // });
-    database.ref(`pokemon/${id}`).remove();
+    database.ref(`users/${this.props.authId}/pokemon/${id}`).remove();
   }
   
   render() {

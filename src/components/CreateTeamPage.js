@@ -1,28 +1,19 @@
 import React from 'react';
 import BuildPokeTeamPage from './BuildPokeTeamPage';
 import database from './../firebase/firebase';
-class CreateTeamPage extends React.Component {
-  constructor() {
-    super();
 
-    this.state = {
-
-    }
-  }
-
-  handleAddTeam = (pokeTeam) => {
-    database.ref('pokemon').push(pokeTeam);
-  }
-
-  render() {
-    return (
-      <BuildPokeTeamPage 
-        type='create' 
-        handleAddTeam={this.handleAddTeam}
-        history = {this.props.history}
-      />
-    );
-  }
-}
+const CreateTeamPage = ({ authId, history }) => {
+  const handleAddTeam = (pokeTeam) => {
+    database.ref(`/users/${authId}/pokemon`).push(pokeTeam);
+  };
+ 
+  return (
+    <BuildPokeTeamPage 
+      type='create' 
+      handleAddTeam={handleAddTeam}
+      history={history}
+    />
+  );
+};
 
 export default CreateTeamPage;
