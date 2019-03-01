@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Router, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import CreateTeamPage from './CreateTeamPage';
 import SavedTeamsPage from './SavedTeamsPage';
@@ -7,6 +7,8 @@ import Header from './Header';
 import EditTeamPage from './EditTeamPage';
 import { firebase, googleAuthProvider } from './../firebase/firebase';
 import LoginPage from './LoginPage';
+import PrivateRoute from './../routes/PrivateRoute';
+import PublicRoute from './../routes/PublicRoute';
 
 const history = createHistory();
 
@@ -21,18 +23,13 @@ class App extends React.Component {
 
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged((user)=> {
-      if(user) {
-        console.log('login');
-        
+      if(user) {    
         this.setState({ auth : user.uid });
-        console.log(this.state.auth);
         if(history.location.pathname ==='/') {
           history.push('/create');
         }
       } else {
         this.setState({ auth : null});
-        console.log(this.state.auth);
-        console.log('logout');
         history.push('/');
       }
     });
@@ -58,42 +55,20 @@ class App extends React.Component {
     return (
       <Router history={history}>
         <React.Fragment>
-          <Header auth={this.state.auth} handleLogout={this.handleLogout}/>
+          {this.state.auth && <Header auth={this.state.auth} handleLogout={this.handleLogout}/>}
           <Switch>
-            <Route path='/' 
-              render= {
-                (props) =>  
-                <LoginPage {...props} 
-                  handleLogin={this.handleLogin}
-                  handleLoginGuest={this.handleLoginGuest} 
-                />
-              }
-              exact 
-            />
-            <Route path='/create' 
-              render = {
-                (props) =>
-                  <CreateTeamPage {...props}
-                    authId ={this.state.auth}
-                  />
-              }
+            <PublicRoute 
+              path='/' 
+              component={LoginPage} 
+              handleLogin={this.handleLogin}
+              handleLoginGuest={this.handleLoginGuest} 
+              authId={this.state.authId}
+              exact
             />
 
-            <Route path='/SavedTeams' render = {
-                (props) =>
-                  <SavedTeamsPage {...props}
-                    authId ={this.state.auth}
-                />
-              } 
-            />
-
-            <Route path='/edit/:id' render = {
-                (props) =>
-                  <EditTeamPage {...props}
-                    authId ={this.state.auth}
-                />
-              } 
-            />
+            <PrivateRoute path='/create' component={CreateTeamPage} authId ={this.state.auth} />
+            <PrivateRoute path='/SavedTeams' component={SavedTeamsPage} authId ={this.state.auth} />
+            <PrivateRoute path='/edit/:id' component={EditTeamPage} authId ={this.state.auth} />
           </Switch>
         </React.Fragment>
       </Router>
@@ -102,3 +77,6 @@ class App extends React.Component {
 }
 
 export default App;
+
+//Question UX - Clicking on buttons taking you right to the page.
+//Fixing memory leaks
