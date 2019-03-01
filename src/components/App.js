@@ -16,7 +16,7 @@ const App = () => {
         <Switch>
           <Route path='/' component={CreateTeamPage} exact />
           <Route path='/SavedTeams' component={SavedTeamsPage} />
-          <Route path='/edit/:id' component={CreateTeamPage} />
+          <Route path='/edit/:id' component={EditTeamPage} />
         </Switch>
       </React.Fragment>
     </Router>

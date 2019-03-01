@@ -9,12 +9,7 @@ const Header = () => (
      
         <li>
           <NavLink 
-            to={{
-              pathname : '/',
-              state : {
-                type : 'create'
-              }
-            }} 
+            to='/'
             activeClassName='is-active'
           > 
             Create Team

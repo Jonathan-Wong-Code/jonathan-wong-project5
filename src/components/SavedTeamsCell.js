@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import './../styles/components/SavedTeamCell.css';
 
 const SavedTeamsCell = ({ team, handleRemoveTeam }) => {
-  console.log(team);
   const renderPokemonImg = () => {
     return team.pokemon.map(pokemon => {
       return (
@@ -32,10 +31,7 @@ const SavedTeamsCell = ({ team, handleRemoveTeam }) => {
       </p>
       <p className='team-cell__description'>{team.description}</p>
       <div className='team-cell__buttons'>
-        <Link to={{
-          pathname : '/edit/:id',
-          state : { type : 'edit' }
-        }}
+        <Link to={`/edit/${team.id}`}
         >   
         Edit
         </Link>

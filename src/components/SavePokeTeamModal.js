@@ -1,12 +1,12 @@
 import React from 'react';
 
 class SavePokeTeamModal extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      name : '',
-      description : ''
+      name : this.props.pokeTeam ? this.props.pokeTeam.name : '',
+      description : this.props.pokeTeam ? this.props.pokeTeam.description : ''
     };
   }
 
@@ -24,13 +24,11 @@ class SavePokeTeamModal extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.name, this.state.description);
     this.props.handleSaveTeam(this.state.name, this.state.description);
     this.props.history.push('/SavedTeams')
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="modal__background">
         <div className='save-form modal__body'>
