@@ -1,7 +1,10 @@
 import React from 'react';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
+
 import './../styles/components/SavedTeamCell.css';
-const SavedTeamsCell = ({ team }) => {
+
+const SavedTeamsCell = ({ team, handleRemoveTeam }) => {
   console.log(team);
   const renderPokemonImg = () => {
     return team.pokemon.map(pokemon => {
@@ -11,6 +14,10 @@ const SavedTeamsCell = ({ team }) => {
         </li>
       );
     });
+  };
+
+  const onDeleteClick = () => {
+    handleRemoveTeam(team.id);
   };
 
   return (
@@ -24,9 +31,15 @@ const SavedTeamsCell = ({ team }) => {
         Created: {moment(team.createdAt).format('MMM do YYYY')}
       </p>
       <p className='team-cell__description'>{team.description}</p>
-      <div className="team-cell__buttons">
-        <button>Edit</button>
-        <button>Delete</button>
+      <div className='team-cell__buttons'>
+        <Link to={{
+          pathname : '/edit/:id',
+          state : { type : 'edit' }
+        }}
+        >   
+        Edit
+        </Link>
+        <button onClick={onDeleteClick}>Delete</button>
       </div>
     </li>
   );

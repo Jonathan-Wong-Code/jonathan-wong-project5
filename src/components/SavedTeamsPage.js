@@ -7,13 +7,12 @@ class SavedTeamsPage extends React.Component {
     super();
 
     this.state = {
-      displayTeam : false,
-      savedTeams : ''
+      savedTeams : {}
     };
   }
 
   async componentDidMount() {
-    database.ref('pokemon').once('value', (response) => {
+    database.ref('pokemon').on('value', (response) => {
       const teamList = {};
       response.forEach(team => {
         teamList[team.key] = ({
@@ -23,18 +22,31 @@ class SavedTeamsPage extends React.Component {
       });
       this.setState({ savedTeams : teamList });
     });
-    console.log(this.state.savedTeams)
   }
   
   componentDidUpdate = (prevProps, prevState) => {
-    console.log(this.state.savedTeams);
+    console.log(this.state.savedTeams)
+
+  }
+  
+  handleRemoveTeam = (id) => {
+    // this.setState((prevState) => {
+    //   delete prevState[id]
+    //   return {
+    //     savedTeams : prevState
+    //   }
+    // });
+    database.ref(`pokemon/${id}`).remove();
   }
   
   render() {
     return (
       <div className="saved-teams-page">
         <h1>My Saved Teams</h1>
-        <SavedTeamsList savedTeams={this.state.savedTeams} />
+        <SavedTeamsList 
+          savedTeams={this.state.savedTeams} 
+          handleRemoveTeam={this.handleRemoveTeam}
+        />
       </div>
     );
   }

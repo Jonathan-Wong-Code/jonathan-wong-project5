@@ -18,13 +18,17 @@ class CreateTeamPage extends React.Component {
       pokemon : [],
       currentPokemonTeam : [],
       pokemonTeamToSave : {},
-      showSaveModal : false
+      showSaveModal : false,
+      pageType : null
     };
   }
 
+  // https://tylermcginnis.com/react-router-pass-props-to-link/ Passing state through link
   async componentDidMount() {
     const response = await pokeapi.get('/pokemon');
     this.setState({ pokemon : response.data.results });
+    console.log(this.props.location.state.type)
+    this.setState({ pageType : this.props.location.state.type })
   }
 
   toggleModal = () => {
@@ -34,19 +38,6 @@ class CreateTeamPage extends React.Component {
   }
 
   handleSaveTeam = (name, description) => {
-    // await this.setState((prevState) => {
-    //   const newTeamObj = {
-    //     pokemon : prevState.currentPokemonTeam,
-    //     name,
-    //     description,
-    //     createdAt : moment().valueOf()
-    //   }
-      
-    //   return {
-    //     pokemonTeamToSave : newTeamObj
-    //   }
-    // });
-
     const newTeamObj = {
       pokemon : this.state.currentPokemonTeam,
       name,
@@ -58,31 +49,16 @@ class CreateTeamPage extends React.Component {
 
   handleAddPokemon = (pokemon) => {
     const uniqueId = uuid();
-    // this.setState((prevState) => ({
-    //   currentPokemonTeam : {...prevState.currentPokemonTeam,  
-    //     [uniqueId] : {
-    //       ...pokemon,
-    //       uniqueId
-    //     }
-    //   }
-    // }));
-
+  
     this.setState((prevState) => ({
       currentPokemonTeam : [...prevState.currentPokemonTeam, {
         uniqueId,
         ...pokemon
       }]
     }));
-    console.log(this.state.currentPokemonTeam);
   }
 
   handleRemovePokemon = (id) => {
-    // this.setState((prevState) => {
-    //     delete prevState.currentPokemonTeam[id]
-    //     return {
-    //       currentPokemonTeam : prevState.currentPokemonTeam
-    //     }
-    // });
     this.setState((prevState) => {
       const newState = prevState.currentPokemonTeam
         .filter(pokemon => pokemon.uniqueId !== id)

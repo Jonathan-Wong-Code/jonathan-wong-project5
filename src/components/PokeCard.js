@@ -28,7 +28,7 @@ class PokeCard extends React.Component {
     
     if (this.state.currentPokemon.sprites.front_default){
       return (
-        <li onClick={this.onPokeCardClick} tabIndex='0' className="poke-card__item">
+        <li onClick={this.onPokeCardClick} tabIndex='0' className={"poke-card__item"}>
           <div className="poke-card__img-box">
             <img src={this.state.currentPokemon.sprites.front_default} alt="" />
           </div>
