@@ -62,9 +62,11 @@ class PokeList extends React.Component {
     return (
       <React.Fragment>
         <div className="poke-list">
-          <ul className="poke-list__grid">
-            {this.renderPokemon()}
-          </ul>
+          <div className="wrapper">
+            <ul className="poke-list__grid">
+              {this.renderPokemon()}
+            </ul>
+          </div>
         </div>
       { 
         this.state.currentPokemon && 

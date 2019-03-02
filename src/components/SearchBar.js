@@ -1,4 +1,5 @@
 import React from 'react';
+import './../styles/components/SearchBar.css';
 
 class SearchBar extends React.Component {
   constructor() {
@@ -26,18 +27,21 @@ class SearchBar extends React.Component {
  
   render() {
     return (
-    <div>
-      <form action="" onSubmit={this.handleSubmit}>
+    <div className='search-bar'>
+      <form action='' onSubmit={this.handleSubmit} className='search-bar__form'>
       <span className='visuallyhidden' htmlFor='search-name'>Search by name</span>
       <input 
         type='text' 
         placeholder='Search Pokemon' 
         id='search-name'
+        className='search-bar__name'
         value={this.state.textFilter}
         onChange={this.handleInputChange}
       />
 
-      <select name="" id="" onChange={this.handleTypeChange} value={this.state.type}>
+      <span className='visuallyhidden' htmlFor='search-type'>Search pokemon by type</span>
+      <select name='' id='search-type' onChange={this.handleTypeChange} value={this.state.type}    
+          className='search-bar__type'>
         <option value='all'> all</option>
         <option value="normal">normal</option>
         <option value="fighting">fighting</option>
@@ -58,6 +62,7 @@ class SearchBar extends React.Component {
         <option value="fairy">fairy</option>
         <option value="fire">fire</option>
       </select> 
+      
       <button type='Submit'>Search!</button>
       </form>
     </div>

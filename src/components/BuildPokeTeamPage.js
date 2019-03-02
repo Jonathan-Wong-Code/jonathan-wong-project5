@@ -7,7 +7,7 @@ import SearchBar from './SearchBar';
 import PokeTeamList from './PokeTeamList';
 import SaveTeamListBtn from './SavePokeTeamBtn'
 import SavePokeTeamModal from './SavePokeTeamModal';
-
+import './../styles/components/BuildPokeTeamPage.css'
 class BuildPokeTeamPage extends React.Component {
   constructor(props) {
     super(props);
@@ -111,17 +111,18 @@ class BuildPokeTeamPage extends React.Component {
               type={this.props.type}
             />
         }
-
-        <SearchBar 
-          handlePokeSearch = {this.handlePokeSearch}
-        />
-        
-        <PokeList 
-          pokemon ={this.state.pokemon} 
-          textFilter ={this.state.textFilter}
-          handleAddPokemon = {this.handleAddPokemon}
-          currentPokemonTeam = {this.state.currentPokemonTeam}
-        />
+        <section className='poke-search'>
+          <SearchBar 
+            handlePokeSearch = {this.handlePokeSearch}
+          />
+          
+          <PokeList 
+            pokemon ={this.state.pokemon} 
+            textFilter ={this.state.textFilter}
+            handleAddPokemon = {this.handleAddPokemon}
+            currentPokemonTeam = {this.state.currentPokemonTeam}
+          />
+        </section>
 
       </React.Fragment>
     );

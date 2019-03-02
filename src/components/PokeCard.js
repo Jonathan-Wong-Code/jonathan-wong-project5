@@ -32,7 +32,7 @@ class PokeCard extends React.Component {
           <div className="poke-card__img-box">
             <img src={this.state.currentPokemon.sprites.front_default} alt="" />
           </div>
-          <p>{this.state.currentPokemon.name}</p>
+          <p className='poke-card__name'>{this.state.currentPokemon.name}</p>
         </li>       
       ) 
     } else {
