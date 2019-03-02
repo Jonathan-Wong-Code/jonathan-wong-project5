@@ -14,6 +14,7 @@ class SavedTeamsPage extends React.Component {
 
   async componentDidMount() {
     this._isMounted = true;
+    
     database.ref(`users/${this.props.authId}/pokemon`).on('value', (response) => {
       const teamList = {};
       response.forEach(team => {
@@ -22,6 +23,7 @@ class SavedTeamsPage extends React.Component {
           id : team.key
         });
       });
+
       if(this._isMounted){
         this.setState({ savedTeams : teamList });
       }

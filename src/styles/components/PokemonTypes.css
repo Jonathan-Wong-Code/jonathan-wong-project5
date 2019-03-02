@@ -1,0 +1,110 @@
+.team-member__types {
+  display:flex;
+  justify-content: center;
+}
+
+.pokemon-type {
+  text-align: center;
+  color:white;
+  font-weight:bold;
+  margin-right:.5rem;
+  padding: .2rem 1rem;
+  border-radius:40px;
+  width:50%;
+}
+
+.pokemon-type:nth-child(2) {
+  margin: 0;
+}
+/* http://www.epidemicjohto.com/t882-type-colors-hex-colors color reference */
+
+.pokemon-type--normal {
+  background: #A8A77A
+}
+
+.pokemon-type--fire {
+  background: #EE8130;
+}
+
+.pokemon-type--water {
+  background: #6390f0;
+}
+
+.pokemon-type--electric {
+  background: #F7D02C
+}
+
+.pokemon-type--grass {
+  background: #7AC74C;
+}
+
+.pokemon-type--ice {
+  background: #96D9D6;
+}
+
+.pokemon-type--fighting {
+  background: #C22E28;
+}
+
+.pokemon-type--poison {
+  background: #A33EA1;
+}
+
+.pokemon-type--ground {
+  background: #E2BF65
+}
+
+.pokemon-type--flying {
+  background: #A98FF3;
+}
+
+.pokemon-type--psychic {
+  background: #F95587
+}
+
+.pokemon-type--bug {
+  background: #A6B91A;
+}
+
+.pokemon-type--rock {
+  background: #B6A136;
+}
+
+.pokemon-type--ghost {
+  background: #735797;
+}
+
+.pokemon-type--dragon {
+  background: #6F35FC;
+}
+
+.pokemon-type--dark {
+  background: #705746;
+}
+
+.pokemon-type--steel {
+  background: #B7B7CE;
+}
+
+.pokemon-type--fairy {
+  background: #D685AD;
+}
+
+/* Rock Type:  B6A136
+Ghost Type:  735797
+Dragon Type:  6F35FC
+Dark Type:  705746
+Steel Type:  B7B7CE
+Fairy Type:  D685AD
+Normal Type: A8A77A
+Fire Type:  EE8130
+Water Type:  6390F0
+Electric Type:  F7D02C
+Grass Type:  7AC74C
+Ice Type:  96D9D6
+Fighting Type:  C22E28
+Poison Type:  A33EA1
+Ground Type:  E2BF65
+Flying Type:  A98FF3
+Psychic Type:  F95587
+Bug Type:  A6B91A */

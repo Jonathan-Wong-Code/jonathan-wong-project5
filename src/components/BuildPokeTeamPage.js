@@ -71,10 +71,10 @@ class BuildPokeTeamPage extends React.Component {
   handlePokeSearch = async (textFilter, type) => {
     if(type !=='all') {
       const response = await pokeapi.get(`/type/${type}`);
-      const normalizedPokemon = response.data.pokemon.map(pokemon => {
+      const formattedPokeData = response.data.pokemon.map(pokemon => {
         return pokemon.pokemon;
-      })
-      this.setState({ pokemon : normalizedPokemon });
+      });
+      this.setState({ pokemon : formattedPokeData });
     } else {
       const response = await pokeapi.get('/pokemon');
       this.setState({ pokemon : response.data.results });
@@ -103,13 +103,13 @@ class BuildPokeTeamPage extends React.Component {
         />  
         {
           this.state.showSaveModal && 
-          <SavePokeTeamModal 
-            toggleModal={this.toggleModal}
-            handleSaveTeam={this.handleSaveTeam}
-            history={this.props.history}
-            pokeTeam = {this.props.pokeTeam ? this.props.pokeTeam : null}
-            type={this.props.type}
-          />
+            <SavePokeTeamModal 
+              toggleModal={this.toggleModal}
+              handleSaveTeam={this.handleSaveTeam}
+              history={this.props.history}
+              pokeTeam = {this.props.pokeTeam ? this.props.pokeTeam : null}
+              type={this.props.type}
+            />
         }
 
         <SearchBar 
@@ -119,7 +119,6 @@ class BuildPokeTeamPage extends React.Component {
         <PokeList 
           pokemon ={this.state.pokemon} 
           textFilter ={this.state.textFilter}
-          type = 'create'
           handleAddPokemon = {this.handleAddPokemon}
           currentPokemonTeam = {this.state.currentPokemonTeam}
         />

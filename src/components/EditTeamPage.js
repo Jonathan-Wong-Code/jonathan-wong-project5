@@ -17,16 +17,16 @@ class EditTeamPage extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
-
-    database.ref(`users/${this.props.authId}/pokemon/${this.props.match.params.id}`).once('value', (response)=> {
-        if(this._isMounted) {
-          this.setState({ editedPokeTeam : response.val() })
-        }
+   
+    database.ref(`users/${this.props.authId}/pokemon/${this.props.match.params.id}`).once('value', (response) => {
+      if(this._isMounted) {
+        this.setState({ editedPokeTeam : response.val() })
+      }
     });
   }
 
   componentWillUnmount() {
-    this._isMounted=false;
+    this._isMounted = false;
   }
   
   handleEditTeam = (pokeTeam) => {

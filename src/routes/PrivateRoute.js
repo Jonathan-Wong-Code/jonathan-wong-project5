@@ -1,8 +1,10 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
+// https://tylermcginnis.com/react-router-pass-props-to-components/
+// For prop rendering
 const PrivateRoute = ({ authId, component : Component, ...rest}) => { 
-  return !! authId ? (
+  return !!authId ? (
       <Route {...rest} 
         render = { (props) => <Component {...props} authId={authId} /> }    
       />
@@ -12,5 +14,7 @@ const PrivateRoute = ({ authId, component : Component, ...rest}) => {
 }
 
 export default PrivateRoute;
+
+
 
   

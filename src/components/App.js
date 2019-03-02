@@ -45,17 +45,16 @@ class App extends React.Component {
   }
 
   handleLogout = () => {
+    this.setState({ auth : null });
     firebase.auth().signOut();
     history.push('/');
   }
   
-  // https://tylermcginnis.com/react-router-pass-props-to-components/
-  // For prop rendering
   render() {
     return (
       <Router history={history}>
         <React.Fragment>
-          {this.state.auth && <Header auth={this.state.auth} handleLogout={this.handleLogout}/>}
+          <Header auth={this.state.auth} handleLogout={this.handleLogout}/>
           <Switch>
             <PublicRoute 
               path='/' 
@@ -68,7 +67,7 @@ class App extends React.Component {
 
             <PrivateRoute path='/create' component={CreateTeamPage} authId ={this.state.auth} />
             <PrivateRoute path='/SavedTeams' component={SavedTeamsPage} authId ={this.state.auth} />
-            <PrivateRoute path='/edit/:id' component={EditTeamPage} authId ={this.state.auth} />
+            <PrivateRoute path='/edit/:id' component={EditTeamPage} authId={this.state.auth} />
           </Switch>
         </React.Fragment>
       </Router>
@@ -80,3 +79,7 @@ export default App;
 
 //Question UX - Clicking on buttons taking you right to the page.
 //Fixing memory leaks
+//Deleting on saved teams page via firebase? or from state and firebase.
+//How to get spaces between words when rendering with jsx?
+
+// warning: can't perform a react state update on an unmounted component. this is a no-op, but it indicates a memory leak in your application. to fix, cancel all subscriptions and asynchronous tasks in the componentwillunmount method.

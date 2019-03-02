@@ -1,14 +1,12 @@
 import React from 'react';
 import './../styles/components/Modal.css';
+import PokemonTypes from './PokemonTypes';
 
 const Modal = ({ pokemon, handleModalCancel, renderButtons, error }) => {
   const renderTypes = () => pokemon.types.map(type => {
-    return (
-      <span className={`modal__type--${type.type.name}`} key={type.type.name}>     {type.type.name}
-      </span>
-    );
+    return <PokemonTypes type={type} key={type.type.name} />;
   });
-
+  
   const renderAbilities = () => pokemon.abilities.map(ability => {
     return (
       <span 
