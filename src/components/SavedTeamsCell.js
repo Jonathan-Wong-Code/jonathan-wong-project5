@@ -31,11 +31,11 @@ const SavedTeamsCell = ({ team, handleRemoveTeam }) => {
         Created: {moment(team.createdAt).format('MMM do YYYY')}
       </p>
       <p className='team-cell__description'>{team.description}</p>
-      <div className='team-cell__buttons'>
-        <Link to={`/edit/${team.id}`}>  
+      <div className='team-cell__buttons '>
+        <Link to={`/edit/${team.id}`} className='btn team-cell__button'>  
           Edit
         </Link>
-        <button onClick={onDeleteClick}>Delete</button>
+        <button onClick={onDeleteClick} className='btn team-cell__button'>Delete</button>
       </div>
     </li>
   );

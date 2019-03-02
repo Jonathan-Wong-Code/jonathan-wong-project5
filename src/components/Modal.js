@@ -52,9 +52,19 @@ const Modal = ({ pokemon, handleModalCancel, handleAddPokemon, error }) => {
           </li>
         </ul>
         {error && <p>{error}</p>}
-        <div>
-          <button onClick={handleAddPokemon}>Save to team</button>
-          <button onClick={handleModalCancel}>Cancel</button>
+        <div className='modal__buttons'>
+          <button 
+            onClick={handleAddPokemon} 
+            className='btn modal__btn'
+          >
+             Save to team
+          </button>
+          <button 
+            onClick={handleModalCancel} 
+            className='btn modal__btn'
+          >
+             Cancel
+          </button>
         </div>
       </div>
     </div>   

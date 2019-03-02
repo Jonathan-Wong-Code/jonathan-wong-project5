@@ -1,5 +1,8 @@
 .team-cell {
-  border:2px solid red;
+  border:2px solid green;
+  border-radius:20px;
+  
+  background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
   padding:2rem;
   display:grid;
   justify-items: center;
@@ -16,12 +19,28 @@
 .team-cell__img-list {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border:1px solid black;
+  
   grid-row-gap:1rem;
   grid-column-gap: 1.5rem;
-  width:60%;
+  width:65%;
 }
 
 .team-cell__img-item {
-  border:1px dashed grey;
+  border-radius:50%;
+}
+
+.team-cell__buttons {
+  display:flex;
+  justify-content: center;
+  width:50%;
+}
+
+.team-cell__button {
+  width:40%;
+}
+
+.team-cell__button:first-child{
+  text-decoration: none;
+  color: black;
+  margin-right:.5rem;
 }

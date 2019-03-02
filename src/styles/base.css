@@ -13,10 +13,10 @@ html {
 
 body {
   font-family: 'Jura', sans-serif;
-  font-family: 'Voces', cursive;
+  /* font-family: 'Voces', cursive; */
   font: 1rem;
   line-height:1.6;
-  background:red;
+
 }
 
 ul {

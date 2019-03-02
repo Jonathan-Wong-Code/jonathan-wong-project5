@@ -16,7 +16,7 @@
   background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
   line-height:1.6;
   border:5px solid black;
-  
+  width:30%;
   
 }
 
@@ -32,6 +32,7 @@
 .modal__types {
   display:flex;
   align-items: center;
+  margin-bottom:.4rem;
 }
 
 .modal__stat-name {
@@ -52,3 +53,18 @@
    transform: scale(1.6);
  }
  
+ .modal__buttons {
+  display:flex;
+  width:100%;
+  justify-content: center;
+  margin-top:1rem;
+ }
+
+ .modal__btn {
+   width:50%;
+   padding:.2rem 0;
+ }
+
+ .modal__btn:not(:last-child) {
+   margin-right:3%;
+ }
