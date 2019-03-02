@@ -1,4 +1,5 @@
 import React from 'react';
+import './../styles/components/SavePokeTeamBtn.css';
 
 const SavePokeTeamBtn = ({ toggleModal, type }) => {
   const onButtonClick = () => {
@@ -6,9 +7,11 @@ const SavePokeTeamBtn = ({ toggleModal, type }) => {
   };
 
   return (
-    <button onClick={onButtonClick} className='save-team__btn'>
-      {type === 'create' ? 'Save Team' : 'Edit Team'}
-    </button>
+    <div className='save-team'>
+      <button onClick={onButtonClick} className='save-team__btn btn'>
+        {type === 'create' ? 'Save Team' : 'Edit Team'}
+      </button>
+    </div>
   );
 };
 

@@ -16,10 +16,9 @@ body {
   font-family: 'Voces', cursive;
   font: 1rem;
   line-height:1.6;
-  background-image: url('./../images/pokedex.png');
+  background:red;
 }
 
-/* //#96D9D6 */
 ul {
   list-style-type: none;
   padding : 0;
@@ -38,4 +37,11 @@ img {
   margin:0 auto;
 }
 
+.btn {
+  text-align: center;
+  display:block;
+  border:1px solid black;
+  background: linear-gradient(lightgrey, white, lightgrey);
+  border-radius:10px;
+}
 /* light grey #D3D3D3 */

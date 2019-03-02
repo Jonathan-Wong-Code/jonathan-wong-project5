@@ -1,5 +1,6 @@
 import React from 'react';
 import PokemonTypes from './PokemonTypes';
+import './../styles/components/PokeTeamListItem.css';
 
 const PokeTeamListItem = ({ pokemon, handleRemovePokemon }) => {
   const onButtonClick = () => {
@@ -19,7 +20,7 @@ const PokeTeamListItem = ({ pokemon, handleRemovePokemon }) => {
           })}
         </div>  
       </div>
-      <button onClick={onButtonClick}>Remove</button>
+      <button onClick={onButtonClick} className='team-member__delete btn'>Remove</button>
     </li>
   );
 };

@@ -90,18 +90,21 @@ class BuildPokeTeamPage extends React.Component {
   render() {
     if(!this.state.pokemon) return <div />
     return (
-      <React.Fragment>
-        <h2 className='build-page__heading'>{this.renderHeading()}</h2>
-        <PokeTeamList 
-          pokeTeam ={this.state.currentPokemonTeam}
-          handleRemovePokemon = {this.handleRemovePokemon}
-        />
+      <section className="build-page">
 
-        <SaveTeamListBtn 
-          currentPokemonTeam ={this.state.currentPokemonTeam}
-          toggleModal={this.toggleModal}
-          type={this.props.type}
-        />  
+        <section className="build-page__poke-team">
+          <h2 className='build-page__heading'>{this.renderHeading()}</h2>
+          <PokeTeamList 
+            pokeTeam ={this.state.currentPokemonTeam}
+            handleRemovePokemon = {this.handleRemovePokemon}
+          />
+
+          <SaveTeamListBtn 
+            currentPokemonTeam ={this.state.currentPokemonTeam}
+            toggleModal={this.toggleModal}
+            type={this.props.type}
+          />  
+        </section>
         {
           this.state.showSaveModal && 
             <SavePokeTeamModal 
@@ -113,19 +116,20 @@ class BuildPokeTeamPage extends React.Component {
             />
         }
         <section className='poke-search'>
-          <SearchBar 
-            handlePokeSearch = {this.handlePokeSearch}
-          />
-          
-          <PokeList 
-            pokemon ={this.state.pokemon} 
-            textFilter ={this.state.textFilter}
-            handleAddPokemon = {this.handleAddPokemon}
-            currentPokemonTeam = {this.state.currentPokemonTeam}
-          />
+          <div className="wrapper poke-search__wrapper">
+            <SearchBar 
+              handlePokeSearch = {this.handlePokeSearch}
+            />
+            
+            <PokeList 
+              pokemon ={this.state.pokemon} 
+              textFilter ={this.state.textFilter}
+              handleAddPokemon = {this.handleAddPokemon}
+              currentPokemonTeam = {this.state.currentPokemonTeam}
+            />
+          </div> 
         </section>
-
-      </React.Fragment>
+      </section>
     );
   }
 }

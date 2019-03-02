@@ -3,6 +3,7 @@
   border-radius:10px;
   display:flex;
   height:22vw;
+  background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
 }
 
 .empty-item__text {

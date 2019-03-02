@@ -10,8 +10,23 @@
 
 .modal__body{
 	background-color:white;
-	padding:3rem 10rem;
+	padding:3rem 5rem;
   margin:auto;
+  border-radius:20px;
+  background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
+  line-height:1.6;
+  border:5px solid black;
+  
+  
+}
+
+.modal__name {
+  margin:1rem;
+  text-align: center;
+}
+
+.modal__name::first-letter {
+  text-transform: uppercase;
 }
 
 .modal__types {
@@ -20,14 +35,20 @@
 }
 
 .modal__stat-name {
-  margin-right:.5rem;
+  margin-right:.2rem;
+  font-weight:600;
+}
+
+.modal__img-box {
+  width:50%;
+  margin: 0 auto;
 }
 
 .modal__img {
    width:100%;
    height:auto;
-   object-fit:cover;
-   
+   object-fit:cover; 
    display:block;
+   transform: scale(1.6);
  }
  

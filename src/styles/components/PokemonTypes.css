@@ -1,16 +1,11 @@
-.team-member__types {
-  display:flex;
-  justify-content: center;
-}
 
 .pokemon-type {
   text-align: center;
   color:white;
-  font-weight:bold;
   margin-right:.5rem;
-  padding: .2rem 1rem;
+  padding: .1rem .8rem;
+  width:100%;
   border-radius:40px;
-  width:50%;
 }
 
 .pokemon-type:nth-child(2) {

@@ -51,30 +51,21 @@ class PokeList extends React.Component {
       }    
   }
 
-  renderButtons = () => (
-    <div>
-      <button onClick={this.handleAddPokemon}>Save to team</button>
-      <button onClick={this.handleModalCancel}>Cancel</button>
-    </div>
-  )
-
   render() {
     return (
       <React.Fragment>
         <div className="poke-list">
-          <div className="wrapper">
             <ul className="poke-list__grid">
               {this.renderPokemon()}
             </ul>
-          </div>
         </div>
       { 
         this.state.currentPokemon && 
         <Modal 
-          pokemon = {this.state.currentPokemon}
-          handleModalCancel = {this.handleModalCancel}
-          renderButtons = {this.renderButtons}
-          error = {this.state.error}
+          pokemon={this.state.currentPokemon}
+          handleModalCancel={this.handleModalCancel}
+          handleAddPokemon={this.handleAddPokemon}
+          error={this.state.error}
         /> 
       }
       </React.Fragment>

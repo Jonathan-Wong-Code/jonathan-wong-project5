@@ -1,0 +1,35 @@
+.team-member {
+  border:1px solid black;
+  padding:2rem 1rem;
+  background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
+  border-radius:40px;
+  display:grid;
+  justify-items: center;
+}
+
+.team-member__img-box {
+  width:5rem;
+}
+.team-member__img {
+  transform: scale(1.5);
+}
+
+.team-member__name {
+  font-size: 1.2rem;
+  margin:1rem 0 .5rem 0;
+}
+
+.team-member__name:first-letter {
+  text-transform: uppercase;
+}
+.team-member__types {
+  display:flex;
+  justify-content: center;
+  width:100%;
+}
+
+.team-member__delete {
+  margin-top:1rem;
+  padding: .2rem .7rem;
+  border:1px solid black;
+}

@@ -4,7 +4,7 @@
 
 .poke-card__item {
   padding:1rem;
-  border:6px solid #B7B7CE;
+  border:1px solid black;
   border-radius:10px;
   width:100%;
   cursor:pointer;

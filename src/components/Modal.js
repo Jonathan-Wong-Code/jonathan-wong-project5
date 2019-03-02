@@ -2,7 +2,7 @@ import React from 'react';
 import './../styles/components/Modal.css';
 import PokemonTypes from './PokemonTypes';
 
-const Modal = ({ pokemon, handleModalCancel, renderButtons, error }) => {
+const Modal = ({ pokemon, handleModalCancel, handleAddPokemon, error }) => {
   const renderTypes = () => pokemon.types.map(type => {
     return <PokemonTypes type={type} key={type.type.name} />;
   });
@@ -35,7 +35,7 @@ const Modal = ({ pokemon, handleModalCancel, renderButtons, error }) => {
             className='modal__img'
           />
         </div>
-        <h1>{pokemon.name}</h1>
+        <h2 className='modal__name'>{pokemon.name}</h2>
         <ul className='modal__attributes'>
           <li className='modal__types'>
             <span className='modal__stat-name'>type: </span>
@@ -52,7 +52,10 @@ const Modal = ({ pokemon, handleModalCancel, renderButtons, error }) => {
           </li>
         </ul>
         {error && <p>{error}</p>}
-        {renderButtons()}
+        <div>
+          <button onClick={handleAddPokemon}>Save to team</button>
+          <button onClick={handleModalCancel}>Cancel</button>
+        </div>
       </div>
     </div>   
   );
