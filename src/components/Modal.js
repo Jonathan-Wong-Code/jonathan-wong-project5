@@ -39,6 +39,7 @@ const Modal = ({ pokemon, handleModalCancel, renderButtons, error }) => {
         <ul className='modal__attributes'>
           <li className='modal__types'>
             <span className='modal__stat-name'>type: </span>
+            {renderTypes()}
           </li>
     
           <li className='modal__abilities'>

@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
     super();
 
     this.state = {
-      type : '',
+      type : 'all',
       textFilter : '',
     }
   }
@@ -34,36 +34,39 @@ class SearchBar extends React.Component {
         type='text' 
         placeholder='Search Pokemon' 
         id='search-name'
-        className='search-bar__name'
+        className='search-bar__name search-bar__item'
         value={this.state.textFilter}
         onChange={this.handleInputChange}
       />
 
       <span className='visuallyhidden' htmlFor='search-type'>Search pokemon by type</span>
       <select name='' id='search-type' onChange={this.handleTypeChange} value={this.state.type}    
-          className='search-bar__type'>
+          className='search-bar__type search-bar__item'>
         <option value='all'> all</option>
-        <option value="normal">normal</option>
-        <option value="fighting">fighting</option>
-        <option value="water">water</option>
-        <option value="flying">flying</option>
-        <option value="grass">grass</option>
-        <option value="poison">poison</option>
-        <option value="electric">electric</option>
-        <option value="ground">ground</option>
-        <option value="psychic">psychic</option>
-        <option value="rock">rock</option>
-        <option value="ice">ice</option>
-        <option value="bug">bug</option>
-        <option value="dragon">dragon</option>
-        <option value="ghost">ghost</option>
-        <option value="dark">dark</option>
-        <option value="steel">steel</option>
-        <option value="fairy">fairy</option>
-        <option value="fire">fire</option>
+        <option value='normal'>normal</option>
+        <option value='fighting'>fighting</option>
+        <option value='water'>water</option>
+        <option value='flying'>flying</option>
+        <option value='grass'>grass</option>
+        <option value='poison'>poison</option>
+        <option value='electric'>electric</option>
+        <option value='ground'>ground</option>
+        <option value='psychic'>psychic</option>
+        <option value='rock'>rock</option>
+        <option value='ice'>ice</option>
+        <option value='bug'>bug</option>
+        <option value='dragon'>dragon</option>
+        <option value='ghost'>ghost</option>
+        <option value='dark'>dark</option>
+        <option value='steel'>steel</option>
+        <option value='fairy'>fairy</option>
+        <option value='fire'>fire</option>
       </select> 
-      
-      <button type='Submit'>Search!</button>
+
+      <button 
+        type='Submit'
+        className='search-bar__submit search-bar__item'>Search!
+       </button>
       </form>
     </div>
     );
