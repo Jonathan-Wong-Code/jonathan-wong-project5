@@ -14,8 +14,8 @@
 
 
 
-.poke-card__item:hover {
-  border:3px solid red;
+.poke-card__item:hover, .poke-card__item:focus {
+  border:3px solid black;
   transform: scale(1.1);
 }
 

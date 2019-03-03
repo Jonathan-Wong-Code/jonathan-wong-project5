@@ -37,19 +37,30 @@ img {
   margin:0 auto;
 }
 
+.is-active {
+  background: red;
+  color:white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+  transform: scale(1.05);
+}
+
+
 .btn {
   text-align: center;
   display:block;
   border:1px solid black;
-  background: linear-gradient(45deg, lightgrey, white, lightgrey 50%,red 50%);
   border-radius:10px;
   font-weight:600;
+  background: linear-gradient(45deg, lightgrey, white, lightgrey 50%,red 50%);
   background-size: 230%;
-  /* background-image: linear-gradient(45deg, #dfdfdf 50%, white 50%); */
   transition: all .2s;
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   transform: scale(1.05);
   background-position:100%;
   color:white;
@@ -60,4 +71,11 @@ img {
     1px 1px 0 #000; 
 }
 
-/* light grey #D3D3D3 */
+.btn:disabled:hover {
+  color: grey;
+  background-position: 0;
+  text-shadow:none;
+  transform: none;
+}
+
+

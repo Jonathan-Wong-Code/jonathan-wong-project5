@@ -90,7 +90,6 @@ class BuildPokeTeamPage extends React.Component {
     if(!this.state.pokemon) return <div />
     return (
       <section className="build-page">
-
         <section className="build-page__poke-team">
           <h2 className='build-page__heading'>{this.renderHeading()}</h2>
           <PokeTeamList 
@@ -99,7 +98,7 @@ class BuildPokeTeamPage extends React.Component {
           />
 
           <SaveTeamListBtn 
-            currentPokemonTeam ={this.state.currentPokemonTeam}
+            pokeTeam ={this.state.currentPokemonTeam}
             toggleModal={this.toggleModal}
             type={this.props.type}
           />  

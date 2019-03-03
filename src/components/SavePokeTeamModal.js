@@ -1,4 +1,5 @@
 import React from 'react';
+import './../styles/components/SavePokeTeamModal.css';
 
 class SavePokeTeamModal extends React.Component {
   constructor(props) {
@@ -38,28 +39,30 @@ class SavePokeTeamModal extends React.Component {
               placeholder='Team Name' 
               value={this.state.name}
               onChange={this.handleInputChange}
-              className='save-form__name'
+              className='save-form__name save-form__input'
             />
             <textarea 
               name='' 
               id='' 
-              cols='30' 
+              cols='20' 
               rows='10'
               placeholder='Team Description' 
               value={this.state.description}
               onChange={this.handleTextAreaChange}
-              className='save-form__description'
+              className='save-form__description save-form__input'
             />
-            <button className='save-form__save' type='submit'>
-            {this.props.type ==='create' ? 'Save Team' : 'Edit Team'}
-            </button>
-            <button 
-              className='save-form__back' 
-              onClick={this.onBackClick}
-              type='button'
-            >
-            Back 
-            </button>
+            <div className="save-form__buttons">
+              <button className='save-form__save save-form__button btn' type='submit'>
+                {this.props.type ==='create' ? 'Save Team' : 'Edit Team'}
+              </button>
+              <button 
+                className='save-form__back save-form__button btn' 
+                onClick={this.onBackClick}
+                type='button'
+              >
+              Back 
+              </button>
+            </div>
           </form>
         </div>
       </div>

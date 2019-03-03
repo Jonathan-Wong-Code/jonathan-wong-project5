@@ -20,8 +20,18 @@
   
 }
 
+.save-form__input:focus  {
+  border:2px dashed grey;
+  background: #FFFAF0;
+}
+
 .search-bar__item:not(:last-child) {
   margin-right:1rem;
+}
+
+.search-bar__name:focus, .search-bar__type:focus {
+  border:2px solid black;
+  background: #FFFAF0;
 }
 
 .search-bar__name {

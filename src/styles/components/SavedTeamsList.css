@@ -1,9 +1,11 @@
 .saved-teams {
-  border:1px solid red;
+  border:none;
+  padding:3rem;
 }
 
 .saved-teams__list {
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
+  
 }

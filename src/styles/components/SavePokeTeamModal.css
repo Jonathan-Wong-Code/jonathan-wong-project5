@@ -1,0 +1,44 @@
+.save-form {
+  width:50%;
+}
+
+.save-form__form {
+
+}
+
+.save-form__name {
+  padding:.5rem;
+  margin-bottom:.3rem;
+}
+
+.save-form__description { 
+  padding:1rem;  
+  border:none;
+}
+
+.save-form__input {
+  width:100%;
+  border:1px solid black;
+  border-radius:20px;
+}
+
+.save-form__input:focus  {
+  
+  border:2px dashed grey;
+  background: #FFFAF0;
+
+}
+
+.save-form__buttons {
+  display:flex;
+  margin-top:1rem;
+}
+
+.save-form__button {
+  width:50%;
+  padding:.3rem 0;
+}
+
+.save-form__button:not(:last-child) {
+  margin-right:1rem;
+}

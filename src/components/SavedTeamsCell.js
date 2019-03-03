@@ -9,7 +9,11 @@ const SavedTeamsCell = ({ team, handleRemoveTeam }) => {
     return team.pokemon.map(pokemon => {
       return (
         <li key={pokemon.uniqueId} className='team-cell__img-item'>
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+          <img 
+            src={pokemon.sprites.front_default} 
+            alt={pokemon.name} 
+            className='team-cell__img' 
+          />
         </li>
       );
     });

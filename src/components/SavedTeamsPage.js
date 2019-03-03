@@ -1,7 +1,7 @@
 import React from 'react';
 import database from './../firebase/firebase';
 import SavedTeamsList from './SavedTeamsList';
-
+import './../styles/components/SavedTeamsPage.css';
 class SavedTeamsPage extends React.Component {
   _isMounted = false;
   constructor() {
@@ -49,13 +49,13 @@ class SavedTeamsPage extends React.Component {
   
   render() {
     return (
-      <div className="saved-teams-page">
-        <h1>My Saved Teams</h1>
-        <SavedTeamsList 
-          savedTeams={this.state.savedTeams} 
-          handleRemoveTeam={this.handleRemoveTeam}
-        />
-      </div>
+      <section className='saved-teams-section'>
+          <h1 className='saved-teams-section__heading'>My Saved Teams</h1>
+          <SavedTeamsList 
+            savedTeams={this.state.savedTeams} 
+            handleRemoveTeam={this.handleRemoveTeam}
+          />  
+      </section>
     );
   }
 }

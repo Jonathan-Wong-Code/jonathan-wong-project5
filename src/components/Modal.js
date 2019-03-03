@@ -26,7 +26,7 @@ const Modal = ({ pokemon, handleModalCancel, handleAddPokemon, error }) => {
   ));
 
   return (
-    <div className='modal__background' onClick={handleModalCancel}>
+    <div className='modal__background' onClick={handleModalCancel} >
       <div className='modal__body' onClick={(e) => e.stopPropagation()}>
         <div className='modal__img-box'>
           <img 
@@ -62,6 +62,7 @@ const Modal = ({ pokemon, handleModalCancel, handleAddPokemon, error }) => {
           <button 
             onClick={handleModalCancel} 
             className='btn modal__btn'
+            
           >
              Cancel
           </button>

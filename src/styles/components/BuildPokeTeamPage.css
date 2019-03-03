@@ -1,14 +1,13 @@
 .build-page__heading {
   text-align: center;
   font-size:3rem;
-  /* background-image: linear-gradient(to right, grey, white, grey); */
   text-align: center;
   color:black;
   font-weight:400;
   width:50%;
   margin:0 auto 3rem auto;
   border-radius:20px;
-  margin-top:3rem;
+  margin-top:2rem;
   background: linear-gradient(to right,lightgrey,white,lightgrey);
 }
 
@@ -16,12 +15,11 @@
   padding:3rem 0;
   background-size:cover;
   background:url('./../../images/pokedex.png');
-  /* background-size:cover; */
 }
 
 .poke-search {
   padding: 3rem;
-  border:1px solid black;
+  border-top:5px solid black;
   background: url('./../../images/pokedex.png');
 }
 

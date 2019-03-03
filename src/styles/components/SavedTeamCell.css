@@ -1,38 +1,48 @@
 .team-cell {
-  border:2px solid green;
+  border:1px solid black;
   border-radius:20px;
-  
   background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
-  padding:2rem;
+  padding:3rem;
   display:grid;
   justify-items: center;
-}
-
-.team-cell p {
-  margin: .5rem 0;
+  align-items:end;
+  word-break: break-all;  
 }
 
 .team-cell__heading {
-  margin-bottom:.5rem;
+  margin-bottom: .2rem;
 }
 
 .team-cell__img-list {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
-  
   grid-row-gap:1rem;
   grid-column-gap: 1.5rem;
-  width:65%;
+  width:70%;
 }
 
 .team-cell__img-item {
   border-radius:50%;
 }
 
+.team-cell__img {
+  transform: scale(1.1);
+}
+
+.team-cell__createdAt {
+  margin:0;
+}
+
 .team-cell__buttons {
+  margin-top:2rem;
   display:flex;
   justify-content: center;
   width:50%;
+}
+
+.team-cell__description {
+  word-wrap: break-all;
+  
 }
 
 .team-cell__button {
