@@ -58,7 +58,7 @@ img {
   font-weight:600;
   background: linear-gradient(45deg, lightgrey, white, lightgrey 50%,red 50%);
   background-size: 230%;
-  transition: all .2s;
+  transition: all .3s;
 }
 
 .btn:hover, .btn:focus {

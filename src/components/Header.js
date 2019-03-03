@@ -11,7 +11,7 @@ import togepi from './../images/togepi.png';
 
 
 const Header = ({ auth, handleLogout }) => {
-  const headerClasses = !!auth ? 'header' : 'header header-fixed';
+  const headerClasses = !!auth ? 'header' : 'header header--login';
   const headingClasses = !!auth ? 'header__heading' : 'header__heading header__heading--login';
   const pokeBannerClasses = !!auth ? 'poke-banner' : 'poke-banner poke-banner--login';
   return (
@@ -22,11 +22,11 @@ const Header = ({ auth, handleLogout }) => {
         </li>
 
         <li className='poke-banner__item'>
-          <img src={squirtle} alt='squirtle' className='poke-banner__img' />
+          <img src={pikachu} alt='pikachu' className='poke-banner__img' />
         </li>
 
         <li className='poke-banner__item'>
-          <img src={pikachu} alt='pikachu' className='poke-banner__img' />
+          <img src={squirtle} alt='squirtle' className='poke-banner__img' />
         </li>
 
         <li className='poke-banner__item poke-banner__logo'>
@@ -34,11 +34,11 @@ const Header = ({ auth, handleLogout }) => {
         </li>
 
         <li className='poke-banner__item'>
-          <img src={charmander} alt='charmander' className='poke-banner__img' />
+          <img src={eevee} alt='eevee' className='poke-banner__img' />
         </li>
 
         <li className='poke-banner__item'>
-          <img src={eevee} alt='squirtle' className='poke-banner__img' />
+          <img src={charmander} alt='charmander' className='poke-banner__img' />
         </li>
         
         <li className='poke-banner__item'>
