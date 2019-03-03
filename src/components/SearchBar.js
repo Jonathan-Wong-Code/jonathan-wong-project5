@@ -18,6 +18,7 @@ class SearchBar extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     await this.props.handlePokeSearch(this.state.textFilter, this.state.type);
+    this.setState({ textFilter : ''});
   }
 
   handleTypeChange = async (e) => {
@@ -65,7 +66,7 @@ class SearchBar extends React.Component {
 
       <button 
         type='Submit'
-        className='search-bar__submit search-bar__item btn'>Search!
+        className='search-bar__submit search-bar__item btn'>Search
        </button>
       </form>
     </div>

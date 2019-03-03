@@ -113,7 +113,7 @@ class BuildPokeTeamPage extends React.Component {
               type={this.props.type}
             />
         }
-        <section className='poke-search'>
+        <section className='build-page__poke-search'>
           <div className="wrapper poke-search__wrapper">
             <SearchBar 
               handlePokeSearch = {this.handlePokeSearch}

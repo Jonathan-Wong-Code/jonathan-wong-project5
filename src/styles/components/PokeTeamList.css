@@ -9,3 +9,16 @@
   text-align: center;
   align-items: center;
 }
+
+@media(max-width:1700px) {
+  .poke-team__list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width:900px) {
+  .poke-team__list {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom:2rem;
+  }
+}

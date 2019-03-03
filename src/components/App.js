@@ -3,7 +3,6 @@ import { Router, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import CreateTeamPage from './CreateTeamPage';
 import SavedTeamsPage from './SavedTeamsPage';
-import Header from './Header';
 import EditTeamPage from './EditTeamPage';
 import { firebase, googleAuthProvider } from './../firebase/firebase';
 import LoginPage from './LoginPage';
@@ -54,20 +53,35 @@ class App extends React.Component {
     return (
       <Router history={history}>
         <React.Fragment>
-          <Header auth={this.state.auth} handleLogout={this.handleLogout}/>
           <Switch>
             <PublicRoute 
               path='/' 
               component={LoginPage} 
               handleLogin={this.handleLogin}
-              handleLoginGuest={this.handleLoginGuest} 
+              handleLoginGuest={this.handleLoginGuest}
+              handleLogout={this.handleLogout} 
               authId={this.state.authId}
               exact
             />
 
-            <PrivateRoute path='/create' component={CreateTeamPage} authId ={this.state.auth} />
-            <PrivateRoute path='/SavedTeams' component={SavedTeamsPage} authId ={this.state.auth} />
-            <PrivateRoute path='/edit/:id' component={EditTeamPage} authId={this.state.auth} />
+            <PrivateRoute 
+              path='/create' 
+              component={CreateTeamPage} 
+              authId ={this.state.auth} 
+              handleLogout={this.handleLogout} 
+            />
+            <PrivateRoute
+              path='/SavedTeams' 
+              component={SavedTeamsPage} 
+              authId ={this.state.auth} 
+              handleLogout={this.handleLogout} 
+             />
+            <PrivateRoute 
+              path='/edit/:id' 
+              component={EditTeamPage} 
+              authId={this.state.auth} 
+              handleLogout={this.handleLogout} 
+            />
           </Switch>
         </React.Fragment>
       </Router>

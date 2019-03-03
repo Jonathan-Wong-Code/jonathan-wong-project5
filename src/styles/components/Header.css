@@ -1,15 +1,36 @@
 .header {
+  min-height:40vh;
   padding:2rem 0;
   width:100%;
   color:black;
-  background:linear-gradient(to top right, grey, lightgrey, white, lightgrey, grey);
-  background-size:cover;
+  background:linear-gradient(to top right, 
+    rgba(128,128,128,1),
+    rgba(211,211,211,1), 
+    rgba(255,255,255,1), 
+    rgba(211,211,211,1), 
+    rgba(128,128,128,1)
+  );
+}
+
+.header-login-box {
+  background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.0)),url('../../images/login6.png');
+  background-size:100% 100%;
+}
+
+.header-fixed {
+  color:white;
+  background:none;
+  padding:0;
 }
 
 .poke-banner {
   display:flex;
   justify-content: center;
   align-items: center;
+
+}
+.poke-banner--login {
+  padding-top:2rem;
 }
 
 .poke-banner__item:not(:last-child) {
@@ -21,13 +42,18 @@
 }
 
 .header__heading {
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
-    letter-spacing: 8px;
-    font-weight:400;
-    font-size:4rem;
-    margin:.5rem 0 1rem 0;
-    color: black;
-    text-align: center;
+  letter-spacing: 3px;
+  font-family: 'Voces', cursive;
+  font-size:4rem;
+  margin:0 0 2rem 0;
+  text-align: center;  
+}
+
+.header__heading--login {
+  width:100%;
+  transform: translateY(50%);
+  border-radius:20px;
+  margin: 0;
 }
 
 .header__banner {
@@ -35,3 +61,15 @@
   margin-right:3rem;
 }
 
+@media(max-width:1400px) {
+  .header-login-box {
+    background-size:cover;
+  }
+}
+
+@media(max-width:1100px) {
+  .header__heading {
+    letter-spacing: 3px;
+    font-size:3rem;
+  }
+}
