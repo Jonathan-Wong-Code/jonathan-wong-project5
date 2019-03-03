@@ -1,7 +1,6 @@
 .poke-team__list {
   padding:0 2%;
   display:grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   justify-content: center;
   grid-template-columns: repeat(6, 15%);
   grid-gap: 2%;
@@ -20,5 +19,11 @@
   .poke-team__list {
     grid-template-columns: 1fr 1fr;
     margin-bottom:2rem;
+  }
+}
+
+@media(max-width:550px) {
+  .poke-team__list {
+    padding: 0 .5rem;
   }
 }

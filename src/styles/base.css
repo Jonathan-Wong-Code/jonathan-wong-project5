@@ -15,8 +15,6 @@ body {
   font-family: 'Jura', sans-serif;
   font-size: 1.2rem;
   line-height:1.6;
- 
-
 }
 
 ul {
@@ -48,7 +46,6 @@ img {
   transform: scale(1.05);
   background-size:100%;
 }
-
 
 .btn {
   text-align: center;
@@ -83,5 +80,17 @@ img {
   .btn {
      background: linear-gradient(45deg, lightgrey, white, lightgrey);
      background-size: auto;
+  }
+}
+
+@media (max-width:750px) {
+  body {
+    font-size:1rem;
+  }
+}
+
+@media (max-width:500px) {
+  body {
+    font-size:.9rem;
   }
 }

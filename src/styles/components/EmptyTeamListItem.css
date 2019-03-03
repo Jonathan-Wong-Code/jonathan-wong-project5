@@ -9,3 +9,21 @@
 .empty-item__text {
   margin: auto;
 }
+
+@media (max-width:1100px) {
+  .empty-item {
+    height:40vw;
+  }
+}
+
+@media (max-width:750px) {
+  .empty-item {
+    height:50vw;
+  }
+}
+
+@media (max-width:550px) {
+  .empty-item {
+    height:50vw;
+  }
+}

@@ -66,3 +66,32 @@
   }
 }
 
+@media (max-width:900px) {
+  .search-bar__form {
+    padding:1rem 2rem;
+    width:90%; 
+
+    display:grid;
+    grid-auto-columns: 1fr;
+    grid-row-gap:.7rem;
+    justify-items: center;
+  }
+
+  .search-bar__item {
+    width:100%;  
+  }
+
+  .search-bar__item:not(:last-child) {
+    margin:0;
+  }
+
+  .search-bar__submit {
+    width:60%;
+  }
+}
+
+@media(max-width:750px) {
+  .search-bar__form {
+    width:95%;
+  }
+}

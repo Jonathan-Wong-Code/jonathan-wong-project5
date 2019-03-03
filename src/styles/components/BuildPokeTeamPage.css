@@ -3,10 +3,11 @@
 }
 .build-page__heading {
   text-align: center;
-  font-size:3rem;
+  
+  font-size:2.2rem;
   text-align: center;
   color:black;
-  font-weight:400;
+  font-weight:600;
   width:60%;
   padding:.5rem;
   margin:0 auto 5rem auto;
@@ -42,3 +43,31 @@
   }
 }
 
+@media(max-width:750px) {
+  .build-page__poke-search {
+    padding:0;
+  }
+
+  .poke-search__wrapper {
+    border-radius: 0;
+    border:none;  
+  }
+
+  .build-page__heading {
+    padding:.8rem 0;
+    font-size:1.8rem;
+    width:75%;
+    margin-top:0;
+  }
+}
+
+@media(max-width:550px) {
+  .build-page__heading {
+    font-size:1.5rem;
+    margin-bottom:3rem;
+  }
+
+  .poke-search__wrapper {
+    padding:2rem 1rem;  
+  }
+}

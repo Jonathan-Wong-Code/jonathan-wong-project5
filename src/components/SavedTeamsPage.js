@@ -50,7 +50,7 @@ class SavedTeamsPage extends React.Component {
   render() {
     return (
       <section className='saved-teams-section'>
-          <h1 className='saved-teams-section__heading'>My Saved Teams</h1>
+          <h2 className='saved-teams-section__heading'>My Saved Teams</h2>
           <SavedTeamsList 
             savedTeams={this.state.savedTeams} 
             handleRemoveTeam={this.handleRemoveTeam}

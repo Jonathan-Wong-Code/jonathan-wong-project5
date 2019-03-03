@@ -37,3 +37,21 @@
   border:1px solid black;
   font-size:1rem;
 }
+
+@media(max-width:550px) {
+  .team-member__img-box {
+    width:3rem;
+  }
+
+  .team-member {
+    padding:2rem .4rem;
+  }
+
+  .team-member__name { 
+    font-size: 1.2rem;
+  }
+
+  .team-member__delete {
+    font-size:.8rem;
+  }
+}

@@ -85,3 +85,19 @@
     transform: scale(1.5);
   }
 }
+
+@media(max-width:600px) {
+  .team-cell {
+    border-radius:0;
+    padding:2rem 1.5rem;
+  }
+  
+  .team-cell__img-list {
+    width:100%;
+    grid-gap:1.5rem;
+  }
+
+  .team-cell__img {
+    transform: scale(1.3);
+  }
+}
