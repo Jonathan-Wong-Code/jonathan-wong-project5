@@ -1,22 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './../styles/components/NavBar.css';
 
 const NavBar = ({ handleLogout }) => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to='/create' activeClassName='is-active'>
+    <nav className='navbar'>
+      <ul className='navbar__nav'>
+        <li className='navbar__item'>
+          <NavLink to='/create' activeClassName='is-active' className='navbar__link btn'>
             Create Team
           </NavLink>
         </li>
-        <li>
-          <NavLink to='/SavedTeams' activeClassName='is-active'>
+        <li className='navbar__item'>
+          <NavLink to='/SavedTeams' activeClassName='is-active' className='navbar__link btn'>
             Saved Teams
           </NavLink>
         </li>
-        <li>
-          <button onClick={handleLogout}>Logout</button>
+        <li className='navbar__item'>
+          <button onClick={handleLogout} className='btn navbar__logout'>Logout</button>
         </li>
       </ul>
     </nav>

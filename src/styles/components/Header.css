@@ -1,14 +1,37 @@
 .header {
-  /* position:fixed; */
-  padding:1px;
+  padding:2rem 0;
   width:100%;
-  color:white;
+  color:black;
+  background:linear-gradient(to top right, grey, lightgrey, white, lightgrey, grey);
+  background-size:cover;
 }
 
-.header {
+.poke-banner {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.poke-banner__item:not(:last-child) {
+  margin-right:1rem;
+}
+
+.poke-banner__img {
+  transform: scale(1.2);
+}
+
+.header__heading {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    letter-spacing: 8px;
+    font-weight:400;
+    font-size:4rem;
+    margin:.5rem 0 1rem 0;
+    color: black;
+    text-align: center;
 }
 
 .header__banner {
-
+  width:5rem;
+  margin-right:3rem;
 }
+

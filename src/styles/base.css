@@ -14,7 +14,7 @@ html {
 body {
   font-family: 'Jura', sans-serif;
   /* font-family: 'Voces', cursive; */
-  font: 1rem;
+  font-size: 1.2rem;
   line-height:1.6;
 
 }
@@ -41,7 +41,23 @@ img {
   text-align: center;
   display:block;
   border:1px solid black;
-  background: linear-gradient(lightgrey, white, lightgrey);
+  background: linear-gradient(45deg, lightgrey, white, lightgrey 50%,red 50%);
   border-radius:10px;
+  font-weight:600;
+  background-size: 230%;
+  /* background-image: linear-gradient(45deg, #dfdfdf 50%, white 50%); */
+  transition: all .2s;
 }
+
+.btn:hover {
+  transform: scale(1.05);
+  background-position:100%;
+  color:white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
 /* light grey #D3D3D3 */

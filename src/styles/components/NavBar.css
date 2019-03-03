@@ -1,0 +1,25 @@
+.navbar {
+  width:50%;
+  margin:0 auto;
+}
+
+.navbar__nav {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__item:not(:last-child){
+  margin-right:2rem;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color:black;
+  padding:.5rem 1rem;
+  
+}
+
+.navbar__logout {
+  padding:.74rem 2rem;
+}

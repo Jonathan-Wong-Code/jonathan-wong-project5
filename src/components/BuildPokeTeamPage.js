@@ -68,7 +68,6 @@ class BuildPokeTeamPage extends React.Component {
   }
  
   handlePokeSearch = async (textFilter, type) => {
-    console.log(type);
     if(type !=='all') {
       const response = await pokeapi.get(`/type/${type}`);
       const formattedPokeData = response.data.pokemon.map(pokemon => {
@@ -79,7 +78,7 @@ class BuildPokeTeamPage extends React.Component {
       const response = await pokeapi.get('/pokemon');
       this.setState({ pokemon : response.data.results });
     }
-    console.log(textFilter);
+
     this.setState({ textFilter })
   }
 
