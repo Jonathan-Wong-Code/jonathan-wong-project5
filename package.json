@@ -5,6 +5,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cli": "^1.0.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.3",
     "firebase": "^5.8.4",
     "heroku": "^7.22.2",
     "history": "^4.7.2",
@@ -32,10 +36,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.12.3"
-  }
+  "devDependencies": {}
 }
