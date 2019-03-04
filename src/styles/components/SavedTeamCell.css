@@ -6,7 +6,6 @@
   display:grid;
   justify-items: center;
   align-items:end;
- 
 }
 
 .team-cell__heading {
@@ -19,6 +18,7 @@
   grid-row-gap:1rem;
   grid-column-gap: 1.5rem;
   width:70%;
+  margin:0;
 }
 
 .team-cell__img-item {

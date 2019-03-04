@@ -150,3 +150,31 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width:350px) {
+
+  .modal__body {
+    padding: .6rem;
+  }
+  
+   .modal__img-box {
+    width:20%;
+  }
+
+  .modal__img {
+    transform: scale(2);
+  }
+
+  .modal__name {
+    margin:1rem 0 .5rem 0;
+  }
+
+  .modal__abilities {
+    margin:.5rem 0;
+  }
+
+  .modal__buttons {
+    margin-top:0;
+    padding:.3rem .5rem;
+   }
+}

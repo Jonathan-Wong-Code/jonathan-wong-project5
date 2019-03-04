@@ -1,14 +1,28 @@
 .save-team {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   padding-top:2rem;
   text-align: center;
 }
 .save-team__btn { 
   text-transform: uppercase;
   padding:1rem 2rem;
-  width:60%;
   margin:0 auto;
+}
+
+.save-team__selected {
+  background: linear-gradient(to right, lightgrey, white, lightgrey);
+  margin:1rem auto;
+  padding:.5rem .7rem;
+  border-radius:10px;
+  margin:1rem .5rem 0 .5rem;
+}
+
+@media(max-width:600px) {
+  .save-team__selected {
+    padding:.5rem;
+    font-size:.9rem;
+  }
 }
 
