@@ -3,22 +3,22 @@
 }
 
 .poke-card__item {
-  width:100%;
-  padding:1rem;
-  border:1px solid black;
-  border-radius:10px;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
   background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
   transition: transform .2s;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .poke-card__item:hover, .poke-card__item:focus {
-  border:3px solid black;
+  border: 3px solid black;
   transform: scale(1.1);
 }
 
 .poke-card__name {
-  margin-bottom:0; 
+  margin-bottom: 0; 
 }
 
 .poke-card__name::first-letter {

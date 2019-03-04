@@ -19,7 +19,7 @@
   background: linear-gradient(to right, lightgrey, white, lightgrey);
 }
 
-@media(max-width:600px) {
+@media(max-width: 600px) {
   .save-team__selected {
     font-size: .9rem;
     padding: .5rem;

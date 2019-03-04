@@ -6,12 +6,19 @@ import './../styles/components/PokeList.css';
 class PokeList extends React.Component { 
   constructor() {
     super();
+    this.pokeModal = React.createRef();
+
     this.state = {
       showModal : false,
       currentPokemon : null,
       error : ''
     };
   } 
+
+  componentDidMount = () => {
+    console.log(this.pokeModal.current)
+  }
+  
 
   setPokemon = (currentPokemon) => {
     this.setState({ currentPokemon });
@@ -31,6 +38,10 @@ class PokeList extends React.Component {
         />
       ))    
     ) 
+  }
+
+  handleSetFocus = (pokeModal) => {
+    pokeModal.focus();
   }
 
   handlePokeCardClick = (currentPokemon) => {
@@ -61,11 +72,12 @@ class PokeList extends React.Component {
         </div>
       { 
         this.state.currentPokemon && 
-        <Modal 
+        <Modal
           pokemon={this.state.currentPokemon}
           handleModalCancel={this.handleModalCancel}
           handleAddPokemon={this.handleAddPokemon}
           error={this.state.error}
+          handleSetFocus={this.handleSetFocus}
         /> 
       }
       </React.Fragment>

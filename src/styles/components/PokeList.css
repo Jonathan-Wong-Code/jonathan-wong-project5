@@ -1,8 +1,8 @@
 .poke-list__grid {
   font-family: 'ZCOOL QingKe HuangYou', cursive;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   text-align: center;
-  letter-spacing:2px;
+  letter-spacing: 2px;
 
   display : grid;
   grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
@@ -12,7 +12,7 @@
 
 @media (max-width:500px) {
   .poke-list__grid {
-    grid-gap:.5rem;
+    grid-gap: .5rem;
     grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
   }
 }

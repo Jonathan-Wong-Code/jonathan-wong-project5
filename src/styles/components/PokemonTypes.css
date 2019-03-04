@@ -1,8 +1,8 @@
 .pokemon-type {
   text-align: center;
-  margin-right:.5rem;
+  margin-right: .5rem;
   padding: .1rem .8rem;
-  border-radius:40px;
+  border-radius: 40px;
   color:#fff;
 }
 
@@ -84,25 +84,25 @@
   background: #D685AD;
 }
 
-@media(max-width:900px) {
+@media(max-width: 900px) {
   .pokemon-type {
-    font-size:1rem;
-    margin-right:.3rem;
+    font-size: 1rem;
+    margin-right: .3rem;
     padding: .1rem .5rem;
   }
 }
 
-@media(max-width:550px) {
+@media(max-width: 550px) {
   .pokemon-type {
-    font-size:.9rem;
-    margin-right:.2rem;
+    font-size: .9rem;
+    margin-right: .2rem;
     padding: .2rem .5rem;
   }
 }
 
-@media(max-width:400px) {
+@media(max-width: 400px) {
   .pokemon-type {
-    margin-right:.2rem;
+    margin-right: .2rem;
     padding: .2rem 1.5rem;
   }
 }

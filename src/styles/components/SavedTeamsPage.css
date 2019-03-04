@@ -30,13 +30,13 @@
   background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
 }
 
-@media(max-width:1700px) {
+@media(max-width: 1700px) {
   .saved-teams-section__heading {
     width: 40%;
   }
 }
 
-@media(max-width:1400px) {
+@media(max-width: 1400px) {
   .saved-teams-section__heading {
     width: 50%;
   }
@@ -46,14 +46,14 @@
   }
 }
 
-@media(max-width:900px) {
+@media(max-width: 900px) {
   .saved-teams-section__heading {
     width: 75%;
     font-size: 1.8rem;
   }
 }
 
-@media(max-width:750px) {
+@media(max-width: 750px) {
   .saved-teams-section__heading {
     width: 80%;
   }
@@ -64,7 +64,7 @@
   }
 }
 
-@media(max-width:600px) {
+@media(max-width: 600px) {
   .saved-teams-section__heading {
     width: 85%;
     font-size: 1.5rem;
@@ -72,7 +72,7 @@
   }
 }
 
-@media(max-width:500px) {
+@media(max-width: 500px) {
   .saved-teams__error {
     width: 75%;
     padding: .3rem 0;
@@ -80,7 +80,7 @@
   }
 }
 
-@media(max-width:400px) {
+@media(max-width: 400px) {
   .saved-teams-section {
     padding: 1rem 0 0 0;
   }
@@ -90,10 +90,10 @@
   }
 
   .saved-teams__error {
-    font-size:.9rem;
-    margin:0 auto;
-    border-radius:10px;
-    transform:translateY(-70%);
+    font-size: .9rem;
+    margin: 0 auto;
+    border-radius: 10px;
+    transform: translateY(-70%);
    }
 }
 

@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "cli": "^1.0.1",
     "firebase": "^5.8.4",
+    "heroku": "^7.22.2",
     "history": "^4.7.2",
     "moment": "^2.24.0",
     "react": "^16.8.3",
@@ -17,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node server/server.js",
+    "homepage": "http://www.jonathanwongcodes.com/pokemon-teambuilder"
   },
   "eslintConfig": {
     "extends": "react-app"

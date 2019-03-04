@@ -50,13 +50,13 @@
   }
 }
 
-@media(max-width:550px) {
+@media(max-width: 550px) {
   .team-member__img-box {
-    width:3rem;
+    width: 3rem;
   }
 
   .team-member {
-    padding:2rem .4rem;
+    padding: 2rem .4rem;
   }
 
   .team-member__name { 
@@ -64,6 +64,6 @@
   }
 
   .team-member__delete {
-    font-size:.8rem;
+    font-size: .8rem;
   }
 }

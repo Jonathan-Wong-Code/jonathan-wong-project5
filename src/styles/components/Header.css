@@ -1,8 +1,8 @@
 .header {
-  width:100%;
-  min-height:40vh;
+  width: 100%;
+  min-height: 40vh;
 
-  padding:2rem 0;
+  padding: 2rem 0;
   
   color:#000;
   background:linear-gradient(to top right, 
@@ -13,32 +13,32 @@
     rgba(128,128,128,1)
   );
 
-  display:grid;
+  display: grid;
   justify-items: center;
 }
 
 .header-login-box {
   background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.0)),url('../../images/login6.png');
-  background-size:100% 100%;
+  background-size: 100% 100%;
   background-position: 20% center;
 }
 
 .header--login {
   color:white;
-  background:none;
-  padding:0;
+  background: none;
+  padding: 0;
 }
 
 .poke-banner {
-  display:flex;
+  display: flex;
   align-items: center;
 }
 .poke-banner--login {
-  padding-top:2rem;
+  padding-top: 2rem;
 }
 
 .poke-banner__item:not(:last-child) {
-  margin-right:1rem;
+  margin-right: 1rem;
 }
 
 .poke-banner__img {
@@ -47,48 +47,48 @@
 
 .header__heading {
   font-family: 'Voces', cursive;
-  font-size:4rem;
+  font-size: 4rem;
   letter-spacing: 3px;
   text-align: center;  
-  margin:0 0 2rem 0;
+  margin: 0 0 2rem 0;
 }
 
 .header__heading--login {
-  width:100%;
+  width: 100%;
   align-self: center;
-  border-radius:20px;
+  border-radius: 20px;
   margin: 0;
 }
 
 .header__banner {
-  width:5rem;
-  margin-right:3rem;
+  width: 5rem;
+  margin-right: 3rem;
 }
 
-@media(max-width:1400px) {
+@media(max-width: 1400px) {
   .header-login-box {
-    background-size:cover;
+    background-size: cover;
   }
 }
 
-@media(max-width:1100px) {
+@media(max-width: 1100px) {
   .header__heading {
     letter-spacing: 3px;
-    font-size:3rem;
+    font-size: 3rem;
   }
 }
 
-@media(max-width:750px) {
+@media(max-width: 750px) {
   .poke-banner--login {
-    display:none;
+    display: none;
   }
 
   .poke-banner__item:nth-last-of-type(odd) {
-    display:none;
+    display: none;
   }
 
   .poke-banner {
-    padding:0 2rem;
+    padding: 0 2rem;
   }
 
   .poke-banner__img {
@@ -96,21 +96,21 @@
   }
 
   .header__heading {
-    width:90%;
-    line-height:1.2;
+    width: 90%;
+    line-height: 1.2;
   }
 }
 
-@media(max-width:500px) {
+@media(max-width: 500px) {
   .header__heading {
-    font-size:2.5rem;
+    font-size: 2.5rem;
     letter-spacing: 3px;
   }
 }
 
-@media(max-width:400px) {
+@media(max-width: 400px) {
   .header__heading {
-    font-size:2rem;
+    font-size: 2rem;
     letter-spacing: 2px;
   }
 }
