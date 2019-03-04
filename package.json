@@ -10,7 +10,6 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.3",
     "firebase": "^5.8.4",
-    "heroku": "^7.22.2",
     "history": "^4.7.2",
     "moment": "^2.24.0",
     "react": "^16.8.3",
@@ -23,8 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "node server/server.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
