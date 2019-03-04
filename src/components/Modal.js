@@ -27,7 +27,7 @@ const Modal = ({ pokemon, handleModalCancel, handleAddPokemon, error }) => {
   ));
 
   return (
-    <div className='modal__background' onClick={handleModalCancel} tabIndex='0'>
+    <div className='modal__background' onClick={handleModalCancel}>
       <div className='modal__body' onClick={(e) => e.stopPropagation()}>
         <div className='modal__img-box'>
           <img 
