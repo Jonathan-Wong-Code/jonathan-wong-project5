@@ -50,7 +50,6 @@
 
 @media(max-width: 750px) {
   .login__buttons{
-    display:flex;
     flex-direction: column;
     width:60%;
     align-items: center;

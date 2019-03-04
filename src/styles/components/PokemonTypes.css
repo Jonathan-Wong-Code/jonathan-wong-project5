@@ -1,16 +1,15 @@
-
 .pokemon-type {
   text-align: center;
-  color:white;
   margin-right:.5rem;
   padding: .1rem .8rem;
-  /* width:100%; */
   border-radius:40px;
+  color:#fff;
 }
 
 .pokemon-type:nth-child(2) {
   margin: 0;
 }
+
 /* http://www.epidemicjohto.com/t882-type-colors-hex-colors color reference */
 
 .pokemon-type--normal {
@@ -87,17 +86,17 @@
 
 @media(max-width:900px) {
   .pokemon-type {
+    font-size:1rem;
     margin-right:.3rem;
     padding: .1rem .5rem;
-    font-size:1rem;
   }
 }
 
 @media(max-width:550px) {
   .pokemon-type {
+    font-size:.9rem;
     margin-right:.2rem;
     padding: .2rem .5rem;
-    font-size:.9rem;
   }
 }
 

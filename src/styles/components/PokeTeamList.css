@@ -1,13 +1,11 @@
 .poke-team__list {
-  padding:0 2%;
+  text-align: center;
+  padding: 0 1rem;
+  
   display:grid;
-
   grid-template-columns: repeat(6, 15%);
   justify-content: center;
   grid-gap:1rem;
-  padding: 0 1rem;
-  text-align: center;
-  
 }
 
 @media(max-width:1700px) {

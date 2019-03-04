@@ -54,7 +54,7 @@ const Modal = ({ pokemon, handleModalCancel, handleAddPokemon, error }) => {
             </ul>
           </li>
         </ul>
-        {error && <p>{error}</p>}
+        {error && <p className='modal__error'>{error}</p>}
         <div className='modal__buttons'>
           <button 
             onClick={handleAddPokemon} 

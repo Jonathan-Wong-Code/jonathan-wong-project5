@@ -25,15 +25,15 @@ ul {
 }
 
 img {
-  width:100%;
-  height:100%;
-  display:block;
+  width: 100%;
+  height: 100%;
+  display: block;
   object-fit: cover;
 }
 
 .wrapper {
-  max-width:1600px;
-  margin:0 auto;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .btn.is-active {
@@ -45,15 +45,15 @@ img {
     -1px 1px 0 #000,
     1px 1px 0 #000; 
   transform: scale(1.05);
-  background-size:100%;
+  background-size: 100%;
 }
 
 .btn {
   text-align: center;
-  display:block;
-  border:1px solid black;
-  border-radius:10px;
-  font-weight:600;
+  display: block;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-weight: 600;
   background: linear-gradient(45deg, lightgrey, white, lightgrey 50%,red 50%);
   background-size: 230%;
   transition: all .3s;
@@ -61,7 +61,7 @@ img {
 
 .btn:hover, .btn:focus {
   transform: scale(1.05);
-  background-position:100%;
+  background-position: 100%;
   color:white;
   text-shadow:
     -1px -1px 0 #000,
@@ -71,31 +71,31 @@ img {
 }
 
 .btn:focus {
-  border:3px solid black;      ;      
+  border: 3px solid black;      ;      
 }
 
 .btn:disabled:hover {
   color: grey;
   background-position: 0;
-  text-shadow:none;
+  text-shadow: none;
   transform: none;
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
   .btn {
      background: linear-gradient(45deg, lightgrey, white, lightgrey);
      background-size: auto;
   }
 }
 
-@media (max-width:750px) {
+@media (max-width: 750px) {
   body {
-    font-size:1rem;
+    font-size: 1rem;
   }
 }
 
-@media (max-width:350px) {
+@media (max-width: 350px) {
   body {
-    font-size:.9rem;
+    font-size: .9rem;
   }
 }

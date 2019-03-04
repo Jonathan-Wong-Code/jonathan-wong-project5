@@ -1,9 +1,9 @@
 .empty-item {
+  height:350px;
   border:1px solid black;
   border-radius:10px;
-  display:flex;
-  height:350px;
   background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
+  display:flex;
 }
 
 .empty-item__text {

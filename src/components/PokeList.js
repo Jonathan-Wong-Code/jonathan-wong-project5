@@ -47,7 +47,7 @@ class PokeList extends React.Component {
       this.props.handleAddPokemon(this.state.currentPokemon);
       this.setState({ currentPokemon : null});
     } else {
-      this.setState({ error : 'Your team is full. Remove a team member' });
+      this.setState({ error : 'Team full! Remove a member' });
     }    
   }
 
