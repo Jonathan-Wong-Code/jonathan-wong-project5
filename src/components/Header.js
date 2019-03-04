@@ -14,6 +14,7 @@ const Header = ({ auth, handleLogout }) => {
   const headerClasses = !!auth ? 'header' : 'header header--login';
   const headingClasses = !!auth ? 'header__heading' : 'header__heading header__heading--login';
   const pokeBannerClasses = !!auth ? 'poke-banner' : 'poke-banner poke-banner--login';
+  
   return (
     <header className={headerClasses}> 
       <ul className={pokeBannerClasses}>
