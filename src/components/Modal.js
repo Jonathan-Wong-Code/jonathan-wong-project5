@@ -59,14 +59,12 @@ const Modal = ({ pokemon, handleModalCancel, handleAddPokemon, error }) => {
           <button 
             onClick={handleAddPokemon} 
             className='btn modal__btn'
-            tabIndex='0'
           >
              Save to team
           </button>
           <button 
             onClick={handleModalCancel} 
             className='btn modal__btn'
-            tabIndex='0'
           >
              Cancel
           </button>
