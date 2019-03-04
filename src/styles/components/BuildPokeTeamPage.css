@@ -71,3 +71,9 @@
     padding:2rem 1rem;  
   }
 }
+
+@media(max-width:400px) {
+  .poke-search__wrapper {
+    padding:2rem .5rem;  
+  }
+}

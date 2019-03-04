@@ -1,12 +1,12 @@
 .poke-team__list {
   padding:0 2%;
   display:grid;
-  justify-content: center;
+
   grid-template-columns: repeat(6, 15%);
-  grid-gap: 2%;
+  grid-gap:1rem;
   padding: 0 1rem;
   text-align: center;
-  align-items: center;
+  
 }
 
 @media(max-width:1700px) {
@@ -16,14 +16,20 @@
 }
 
 @media(max-width:900px) {
-  .poke-team__list {
-    grid-template-columns: 1fr 1fr;
-    margin-bottom:2rem;
+  .poke-team__list { 
+    /* margin-bottom:2rem; */
   }
 }
 
-@media(max-width:550px) {
+@media (max-width:650px) {
   .poke-team__list {
     padding: 0 .5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width:400px) {
+  .poke-team__list {
+    grid-template-columns: 1fr;
   }
 }

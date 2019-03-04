@@ -13,6 +13,7 @@ const SavePokeTeamBtn = ({ toggleModal, type, pokeTeam }) => {
       <button onClick={onButtonClick} className='save-team__btn btn' disabled={disabledStatus}>
         {type === 'create' ? 'Save Team' : 'Edit Team'}
       </button>
+      <p>Select 6 Pokemon to save your team. Currently {pokeTeam.length}/6.</p>
     </div>
   );
 };

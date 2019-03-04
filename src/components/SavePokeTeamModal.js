@@ -7,7 +7,8 @@ class SavePokeTeamModal extends React.Component {
 
     this.state = {
       name : this.props.pokeTeam ? this.props.pokeTeam.name : '',
-      description : this.props.pokeTeam ? this.props.pokeTeam.description : ''
+      description : this.props.pokeTeam ? this.props.pokeTeam.description : '',
+      error :''
     };
   }
 
@@ -25,8 +26,18 @@ class SavePokeTeamModal extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.handleSaveTeam(this.state.name, this.state.description);
-    this.props.history.push('/SavedTeams')
+    if(!this.state.name) {
+      this.setState({ error : 'Must enter a team name to save.'});
+    } else {
+      this.props.handleSaveTeam(this.state.name, this.state.description);
+      this.props.history.push('/SavedTeams')
+    }
+  }
+
+  renderMessage = () => {
+    return (
+      this.state.error ? `${this.state.error}`: `Enter a name and description for your team.`
+    )
   }
 
   render() {
@@ -34,6 +45,7 @@ class SavePokeTeamModal extends React.Component {
       <div className="modal__background" onClick={() => this.props.toggleModal()}>
         <div className='save-form modal__body' onClick={(e) => e.stopPropagation()}>
           <form action='' className="save-form__form" onSubmit={this.handleSubmit}>
+            <h2 className='save-form__message'>{this.renderMessage()}</h2>
             <input 
               type='text' 
               placeholder='Team Name' 

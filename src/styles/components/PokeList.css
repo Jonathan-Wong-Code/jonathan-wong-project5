@@ -10,9 +10,10 @@
 }
 
 @media (max-width:500px) {
-
   .poke-list__grid {
     grid-gap:.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
   }
+
 }
 

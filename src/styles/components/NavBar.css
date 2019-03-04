@@ -58,3 +58,26 @@
     font-size:.9rem;
   }
 }
+
+@media(max-width:400px) {
+  .navbar__nav {
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .navbar__item:not(:last-child){
+    margin-right: 0;
+    margin-bottom:.8rem;
+  }
+  .navbar__item{
+    width:60%;
+  }
+  .navbar__link { 
+    padding:.5rem 0;
+  }
+
+  .navbar__logout {
+    padding:.65rem 0;
+    width:100%;
+  }
+}

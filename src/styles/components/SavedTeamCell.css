@@ -6,7 +6,7 @@
   display:grid;
   justify-items: center;
   align-items:end;
-  word-break: break-all;  
+ 
 }
 
 .team-cell__heading {
@@ -41,8 +41,10 @@
 }
 
 .team-cell__description {
-  word-wrap: break-all;
   margin-bottom:0;
+  word-break: all;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .team-cell__button {

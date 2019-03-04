@@ -38,6 +38,16 @@
   font-size:1rem;
 }
 
+@media(max-width:900px) {
+  .team-member__name {
+    letter-spacing:2px;
+    font-weight:400;
+    font-size: 1.2rem;
+    margin:1rem 0 .5rem 0;
+   
+  }
+}
+
 @media(max-width:550px) {
   .team-member__img-box {
     width:3rem;
@@ -48,7 +58,7 @@
   }
 
   .team-member__name { 
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .team-member__delete {
