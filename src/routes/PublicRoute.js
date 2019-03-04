@@ -8,12 +8,12 @@ const PublicRoute = ({ authId, handleLogin, handleLoginGuest , component : Compo
       <Route {...rest} 
       render = { (props) => 
         <div className='header-login-box'>
-        <Header auth={authId} handleLogout={handleLogout} />
-        <Component {...props} 
-          handleLogin={handleLogin}
-          handleLoginGuest={handleLoginGuest} 
-          exact
-        /> 
+          <Header auth={authId} handleLogout={handleLogout} />
+          <Component {...props} 
+            handleLogin={handleLogin}
+            handleLoginGuest={handleLoginGuest} 
+            exact
+          /> 
         </div>
       } 
     />
