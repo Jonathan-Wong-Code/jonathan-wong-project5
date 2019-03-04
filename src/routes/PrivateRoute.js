@@ -5,7 +5,6 @@ import Header from'../components/Header';
 // For prop rendering
 const PrivateRoute = ({ authId, component : Component,  handleLogout, ...rest}) => { 
   return !!authId ? (
-      
       <Route {...rest} 
         render = { (props) => 
           <div className='header-component-box'>

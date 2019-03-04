@@ -17,7 +17,7 @@
   background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
   line-height:1.6;
   border:5px solid black;
-  width:35%;
+  width:30%;
   
 }
 
@@ -49,18 +49,23 @@
   margin-bottom:.4rem;
 }
 
-.modal__abilities {
-  display:grid;
-  grid-template-columns: min-content 1fr;
-  justify-items: center;
+.modal__abilities {  
+  text-align: center;
+  width:100%;
+  margin:0 auto;
 }
 
 .modal__abilities-list {
   width:100%;
   margin-left:1rem;
   display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-template-columns: 1fr 1fr;
   grid-column-gap:1rem;
+}
+
+.modal__ability{
+  text-align: left;
+  width:100%;
 }
 
 .modal__stat-name {
@@ -86,33 +91,37 @@
 
  @media(max-width:1700px) {
    .modal__body {
-     width: 45%;
+     width: 40%;
    }
  }
 
  @media(max-width:1400px) {
   .modal__body {
-    width: 55%;
+    width: 48%;
   }
 }
 
 @media(max-width:1100px) {
   .modal__body {
-    width: 65%;
+    width: 55%;
   }
 }
 
 @media(max-width:900px) {
   .modal__body {
-    width: 75%;
+    width: 65%;
     padding:3rem;
   }
 }
 
 @media(max-width:750px) {
   .modal__body {
-    width: 90%;
+    width: 75%;
     padding:3rem;
+  }
+
+  .modal__btn {
+    padding:.5rem 0;
   }
 }
 
@@ -129,8 +138,20 @@
     border:none;
   }
 
+  .modal__abilities {  
+    text-align: center;
+    width:100%;
+    margin:1rem auto 0 auto;
+  }
+  .modal__abilities-list {
+    grid-column-gap:0rem;
+  }
+
+  .modal__ability {
+    margin-top:.5rem;
+  }
+
   .modal__btn {
-    width:50%;
     padding:.5rem 0;
   }
 
@@ -139,15 +160,21 @@
     margin: 0 auto;
   }
 
-  .modal__abilities-list {
-    margin-left:.5rem;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap:.5rem;
-  }
+  .modal__buttons {
+    width:70%;
+    font-size:.9rem;
+    margin-top:1.5rem;
+   }
+}
 
-  .modal__abilities {
-    margin:1rem 0;
-    grid-template-columns: 1fr;
+@media(max-width:400px) {
+  .modal__buttons {
+    width:90%;
+   }
+
+   .modal__btn {
+    width:50%;
+    padding:.5rem;
   }
 }
 
@@ -170,11 +197,21 @@
   }
 
   .modal__abilities {
-    margin:.5rem 0;
+    margin:0;
+  }
+
+  .modal__ability {
+    margin-top: .3rem;
   }
 
   .modal__buttons {
-    margin-top:0;
-    padding:.3rem .5rem;
+    margin-top:.5rem;
+    padding:.3rem .1rem;
+    width:100%;
+    font-size:.8rem;
    }
+
+   .modal__btn {
+    
+  }
 }

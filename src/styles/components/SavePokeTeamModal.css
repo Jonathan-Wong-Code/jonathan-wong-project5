@@ -19,6 +19,7 @@
   width:100%;
   border:1px solid black;
   border-radius:20px;
+  padding: .5rem 1rem;
 }
 
 .save-form__input:focus  {
