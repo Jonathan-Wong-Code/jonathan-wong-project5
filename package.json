@@ -24,9 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "node server/server.js",
-    "homepage": "http://www.jonathanwongcodes.com/pokemon-teambuilder",
-    "heroku-postbuild": "npm run build"
+    "server": "node server/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
