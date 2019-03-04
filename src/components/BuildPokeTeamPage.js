@@ -17,10 +17,10 @@ class BuildPokeTeamPage extends React.Component {
       currentPokemonTeam : this.props.pokeTeam ? this.props.pokeTeam.pokemon : [],
       pokemonTeamToSave : {},
       showSaveModal : false,
+      searchError : ''
     };
   }
 
-  // https://tylermcginnis.com/react-router-pass-props-to-link/ Passing state through link
   async componentDidMount() {
     const response = await pokeapi.get('/pokemon');
     this.setState({ pokemon : response.data.results });
@@ -31,7 +31,7 @@ class BuildPokeTeamPage extends React.Component {
       showSaveModal : !prevState.showSaveModal
     }));
   }
-
+ 
   handleSaveTeam = (name, description) => {
     const newTeamObj = {
       pokemon : this.state.currentPokemonTeam,
@@ -73,15 +73,16 @@ class BuildPokeTeamPage extends React.Component {
       const formattedPokeData = response.data.pokemon.map(pokemon => {
         return pokemon.pokemon;
       });
+
       this.setState({ pokemon : formattedPokeData });
     } else {
       const response = await pokeapi.get('/pokemon');
       this.setState({ pokemon : response.data.results });
     }
-
+    
     this.setState({ textFilter })
   }
-
+  
   renderHeading = () => (
     this.props.pokeTeam ? `Editing Team: ${this.props.pokeTeam.name}` : `Create Team`
   )

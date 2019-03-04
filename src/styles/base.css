@@ -15,7 +15,7 @@ body {
   font-family: 'Jura', sans-serif;
   font-size: 1.2rem;
   line-height:1.6;
-  
+  background: url('../images/pokedex.png');
 }
 
 ul {
@@ -68,6 +68,10 @@ img {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000; 
+}
+
+.btn:focus {
+  border:3px solid black;      ;      
 }
 
 .btn:disabled:hover {

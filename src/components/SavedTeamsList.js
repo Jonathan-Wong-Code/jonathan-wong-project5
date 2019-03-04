@@ -19,10 +19,8 @@ const SavedTeamsList = ({ savedTeams, handleRemoveTeam }) => {
       <ul className='saved-teams__list'>
         {renderTeamCell()}
       </ul>
-    </div>
-    
-  )
+    </div> 
+  );
 };
 
 export default SavedTeamsList;
-

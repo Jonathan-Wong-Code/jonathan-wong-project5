@@ -43,12 +43,12 @@ class PokeList extends React.Component {
   }
 
   handleAddPokemon = () => {
-      if(Object.values(this.props.currentPokemonTeam).length < 6){
-        this.props.handleAddPokemon(this.state.currentPokemon);
-        this.setState({ currentPokemon : null});
-      } else {
-        this.setState({ error : 'Your team is full. Remove a team member' });
-      }    
+    if(this.props.currentPokemonTeam.length < 6){
+      this.props.handleAddPokemon(this.state.currentPokemon);
+      this.setState({ currentPokemon : null});
+    } else {
+      this.setState({ error : 'Your team is full. Remove a team member' });
+    }    
   }
 
   render() {
@@ -69,7 +69,6 @@ class PokeList extends React.Component {
         /> 
       }
       </React.Fragment>
-      
     )
   }
 };

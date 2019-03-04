@@ -3,7 +3,10 @@ import database from './../firebase/firebase';
 import SavedTeamsList from './SavedTeamsList';
 import './../styles/components/SavedTeamsPage.css';
 class SavedTeamsPage extends React.Component {
+  //Fixing memory leak on async setState calls using _isMounted
+  // https://www.robinwieruch.de/react-warning-cant-call-setstate-on-an-unmounted-component/
   _isMounted = false;
+
   constructor() {
     super();
 
@@ -16,7 +19,7 @@ class SavedTeamsPage extends React.Component {
     this._isMounted = true;
     
     database.ref(`users/${this.props.authId}/pokemon`).on('value', (response) => {
-      const teamList = {};
+    const teamList = {};
       response.forEach(team => {
         teamList[team.key] = ({
           ...team.val(),
@@ -30,31 +33,31 @@ class SavedTeamsPage extends React.Component {
     });
   }
 
-
   componentWillUnmount() {
     this._isMounted = false;
     database.ref().off();
   }
 
   handleRemoveTeam = (id) => {
-    // this.setState((prevState) => {
-    //   const newObj = Object.assign({}, prevState.savedTeams);
-    //   delete newObj[id]
-    //   return {
-    //     savedTeams : newObj
-    //   }
-    // });
     database.ref(`users/${this.props.authId}/pokemon/${id}`).remove();
   }
   
+  renderResults = () => {
+    return Object.values(this.state.savedTeams).length === 0 ? (
+        <p className="saved-teams__error">No Teams Saved</p>    
+    ) : (
+      <SavedTeamsList 
+        savedTeams={this.state.savedTeams} 
+        handleRemoveTeam={this.handleRemoveTeam}
+      />  
+    )
+  }
+
   render() {
     return (
       <section className='saved-teams-section'>
-          <h2 className='saved-teams-section__heading'>My Saved Teams</h2>
-          <SavedTeamsList 
-            savedTeams={this.state.savedTeams} 
-            handleRemoveTeam={this.handleRemoveTeam}
-          />  
+        <h2 className='saved-teams-section__heading'>My Saved Teams</h2>
+        {this.renderResults()}
       </section>
     );
   }

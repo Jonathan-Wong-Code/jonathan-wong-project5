@@ -13,6 +13,17 @@
   border-radius:20px;
 }
 
+.saved-teams__error {
+  font-size:1.5rem;
+  background-image: linear-gradient(to right, #96D9D6, #fff, #96D9D6);
+  width:20%;
+  margin:2rem auto;
+  text-align: center;
+  padding:1rem 0;
+  font-weight:600;
+  border-radius:20px;
+}
+
 @media(max-width:1700px) {
   .saved-teams-section__heading {
     width:40%;
@@ -22,6 +33,10 @@
 @media(max-width:1400px) {
   .saved-teams-section__heading {
     width:50%;
+  }
+
+  .saved-teams__error {
+    width:40%;
   }
 }
 
@@ -36,6 +51,11 @@
   .saved-teams-section__heading {
     width:80%;
   }
+
+  .saved-teams__error {
+    width:60%;
+    font-size:1.3rem;
+  }
 }
 
 @media(max-width:600px) {
@@ -46,9 +66,31 @@
   }
 }
 
+@media(max-width:500px) {
+  .saved-teams__error {
+    width:75%;
+    padding:.3rem 0;
+    margin:1rem auto 0 auto;
+  }
+}
+
 @media(max-width:400px) {
+
+  .saved-teams-section {
+    padding:1rem 0;
+  }
+
   .saved-teams-section__heading {
     width:90%;
-  
   }
+  .saved-teams__error {
+    margin:0 auto;
+    font-size:.9rem;
+    border-radius:10px;
+    transform:translateY(-70%);
+   }
+}
+
+@media(max-width:350px) {
+ 
 }

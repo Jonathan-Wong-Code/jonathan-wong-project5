@@ -14,6 +14,9 @@ class PokeCard extends React.Component {
     await this.getPokemon();
   }
 
+  //This also seems to fix the memory leak? Abstracting the async call to another function?
+  //Unsure of which way is the better method but it's 11:30PM on Sunday so I'll leave it here
+  //until I can research more.
   getPokemon = async () => {
     const response = await axios.get(`${this.props.pokemon.url}`);
     await this.setState({currentPokemon : response.data});

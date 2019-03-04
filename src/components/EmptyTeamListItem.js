@@ -11,5 +11,5 @@ const EmptyTeamListItem = ({ index }) => {
   );
 };
 
-export default EmptyTeamListItem; 
+export default EmptyTeamListItem;
 

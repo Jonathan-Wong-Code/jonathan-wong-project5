@@ -15,15 +15,14 @@ class SearchBar extends React.Component {
     this.setState({ textFilter : e.target.value });
   }
 
-  handleSubmit = async (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
-    await this.props.handlePokeSearch(this.state.textFilter, this.state.type);
+    this.props.handlePokeSearch(this.state.textFilter, this.state.type);
     this.setState({ textFilter : ''});
   }
 
   handleTypeChange = async (e) => {
-  //  await this.props.handlePokeTypeSearch(e.target.value);
-  this.setState({ type: e.target.value });
+    this.setState({ type: e.target.value });
   }
  
   render() {
@@ -41,8 +40,11 @@ class SearchBar extends React.Component {
       />
 
       <span className='visuallyhidden' htmlFor='search-type'>Search pokemon by type</span>
-      <select name='' id='search-type' onChange={this.handleTypeChange} value={this.state.type}    
-          className='search-bar__type search-bar__item'>
+      <select 
+        name='' id='search-type' 
+        onChange={this.handleTypeChange} 
+        value={this.state.type}  
+        className='search-bar__type search-bar__item'>
         <option value='all'> all</option>
         <option value='normal'>normal</option>
         <option value='fighting'>fighting</option>

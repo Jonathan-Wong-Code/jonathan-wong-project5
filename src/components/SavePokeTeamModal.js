@@ -77,11 +77,9 @@ class SavePokeTeamModal extends React.Component {
             </div>
           </form>
         </div>
-      </div>
-      
+      </div>  
     );
   }
- 
 };
 
 export default SavePokeTeamModal;
